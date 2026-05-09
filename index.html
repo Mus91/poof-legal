@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Poof — Privacy Policy. What data the app accesses on your device, what it does with it, and what (if anything) leaves your device.">
-<title>Poof — Privacy Policy</title>
+<meta name="description" content="Poof | Privacy Policy. What data the app accesses on your device, what it does with it, and what (if anything) leaves your device.">
+<title>Poof | Privacy Policy</title>
 <style>
   :root {
     --bg: #fbfaff;
@@ -415,12 +415,12 @@
     <li><span><strong>No accounts.</strong> You don't sign in. There is no server holding your data because there is no server.</span></li>
   </ul>
 
-  <p>If at any point this policy contradicts what the app actually does, the app is wrong — please contact us so we can fix it.</p>
+  <p>If at any point this policy contradicts what the app actually does, the app is wrong; please contact us so we can fix it.</p>
 
   <div class="callout">
     <h2>The short version</h2>
     <p>Poof is a utility toolkit. Most tools work entirely on your device and never make a network request. Two tools (Speed Test and Currency Converter) make HTTP requests to Cloudflare and a public exchange-rate API respectively, and only when you actively use them. No request to any third party contains your contacts, files, location, notifications, or any user-identifying information.</p>
-    <p>When a tool needs access to something on your device — your camera, microphone, location, contacts, notifications, or installed apps — Android prompts you to grant permission, and you can revoke it at any time from Android Settings. Poof never accesses any of these without an explicit user action.</p>
+    <p>When a tool needs access to something on your device (your camera, microphone, location, contacts, notifications, or installed apps), Android prompts you to grant permission, and you can revoke it at any time from Android Settings. Poof never accesses any of these without an explicit user action.</p>
   </div>
 
   <h2>What we access, and where it goes</h2>
@@ -441,7 +441,7 @@
     <dl class="label-grid">
       <dt>Tools</dt><dd>QR Generator/Scanner, Document Scanner, Magnifier, Camera Inspector, Image OCR, Live Color Picker.</dd>
       <dt>Accessed</dt><dd>Camera frames in real time.</dd>
-      <dt>Used for</dt><dd>On-device processing using Google's ML Kit (the on-device variant — no Firebase ML, no Google Cloud Vision). Frames are analyzed in memory for barcodes, text, document edges, or color.</dd>
+      <dt>Used for</dt><dd>On-device processing using Google's ML Kit (the on-device variant: no Firebase ML, no Google Cloud Vision). Frames are analyzed in memory for barcodes, text, document edges, or color.</dd>
       <dt>Goes to</dt><dd class="nowhere">Nowhere. No frames are saved. No frames are uploaded.</dd>
     </dl>
   </section>
@@ -482,7 +482,7 @@
       <li>Suppress text capture (keep titles only).</li>
       <li>Auto-prune entries older than your chosen retention period.</li>
       <li>Manually delete individual or all entries.</li>
-      <li>Export entries as a CSV (Pro feature) — saved to your Downloads folder or shared via Android's share sheet to a destination <em>you</em> pick. Poof does not upload it anywhere on its own.</li>
+      <li>Export entries as a CSV (Pro feature), saved to your Downloads folder or shared via Android's share sheet to a destination <em>you</em> pick. Poof does not upload it anywhere on its own.</li>
     </ul>
     <p class="opt-out">Notifications can contain sensitive information (one-time codes, message previews, banking alerts). Capture is opt-in and you control what is captured.</p>
   </section>
@@ -534,9 +534,9 @@
     <h3>Speed Test → Cloudflare</h3>
     <p>When you run a speed test, the tool exchanges data with Cloudflare's public speed-test infrastructure:</p>
     <ul class="endpoints">
-      <li>https://speed.cloudflare.com/meta — returns your public IP, ISP name, and detected city</li>
-      <li>https://speed.cloudflare.com/__down — downloads test bytes for download-speed measurement</li>
-      <li>https://speed.cloudflare.com/__up — uploads random bytes for upload-speed measurement</li>
+      <li>https://speed.cloudflare.com/meta : returns your public IP, ISP name, and detected city</li>
+      <li>https://speed.cloudflare.com/__down : downloads test bytes for download-speed measurement</li>
+      <li>https://speed.cloudflare.com/__up : uploads random bytes for upload-speed measurement</li>
     </ul>
     <p>Test results (Mbps, latency, jitter) are saved to a local on-device database so you can see your history. <strong>Nothing about your test results is sent to Poof or anywhere else.</strong> Cloudflare's privacy policy applies to the Cloudflare side: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">cloudflare.com/privacypolicy</a></p>
   </section>
@@ -544,7 +544,7 @@
   <section class="tool-section">
     <h3>Currency Converter → open.er-api.com</h3>
     <p>When you open the Currency Converter, it fetches current exchange rates from <code>https://open.er-api.com/v6/latest/{currency}</code>. The request contains only the base-currency code (e.g. <code>USD</code>). Rates are cached on your device so the converter works offline.</p>
-    <p>No personally identifying information is sent to either service. Both requests are made from your device's IP — same as any web browser — and contain no Poof-assigned user ID or device identifier (because none exists).</p>
+    <p>No personally identifying information is sent to either service. Both requests are made from your device's IP (same as any web browser) and contain no Poof-assigned user ID or device identifier (because none exists).</p>
   </section>
 
   <h2>What we do <em>not</em> do</h2>
@@ -555,7 +555,7 @@
       <li><strong>No advertising.</strong> No AdMob, Unity Ads, AppLovin, IronSource, etc.</li>
       <li><strong>No accounts.</strong> No sign-in, no email collection, no profile.</li>
       <li><strong>No device identifiers.</strong> No GAID, ANDROID_ID, IMEI, MAC address.</li>
-      <li><strong>No cloud backup.</strong> Auto-backup and device-transfer rules are disabled — your Poof data does not go to Google Drive even if the rest of your phone does.</li>
+      <li><strong>No cloud backup.</strong> Auto-backup and device-transfer rules are disabled, so your Poof data does not go to Google Drive even if the rest of your phone does.</li>
       <li><strong>No data selling.</strong> There is no data to sell. There is no buyer.</li>
     </ul>
   </div>
@@ -589,7 +589,7 @@
   </div>
 
   <footer>
-    Poof — Privacy Policy · Effective May 9, 2026
+    Poof | Privacy Policy · Effective May 9, 2026
   </footer>
 
 </main>
