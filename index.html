@@ -537,6 +537,24 @@
     </dl>
   </section>
 
+  <section class="tool-section">
+    <h3>11. Journal (Diary tool)</h3>
+    <dl class="label-grid">
+      <dt>Tool</dt><dd>Diary — private on-device journal with one entry per day, mood tracking, photos, calendar view, streaks, daily reminders, and an optional biometric lock.</dd>
+      <dt>Accessed</dt><dd>The text, mood selection, and photos you choose to attach to each daily entry. Photos are added by picking from your gallery using Android's system Photo Picker (up to 5 per entry). The tool reads your device's wall clock and time zone so the daily reminder fires at the time you configure.</dd>
+      <dt>Used for</dt><dd>Storing entries in the tool's on-device database. Attached photos are downscaled to roughly 1600 px on the long edge and written to the app's private files directory so they keep working even if the source is later moved or deleted from your gallery. The same data drives the in-app calendar, streak counter, mood chart, "On this day" memory card, the home-screen widget (today's mood + streak), and the optional daily reminder notification.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere. Entries and photos live only on this device and are deleted when you remove the entry, use "Delete all", or uninstall the app. Sharing exports through Android's standard share sheet routes to whichever app you choose; Poof does not upload anything on its own.</dd>
+      <dt>Exports you can create</dt><dd>The tool offers two export formats via Android's system file picker (you choose the destination — local folder, Drive, email attachment, anywhere):
+        <ul>
+          <li><strong>Markdown</strong> — one text file containing every entry's date, mood, and content. Photos are <em>not</em> included; the markdown is plain text.</li>
+          <li><strong>PDF</strong> — a fully rendered document containing every entry's text and attached photos, paginated. Used for portable backups or printing.</li>
+        </ul>
+        Importing markdown back into the tool restores the text + mood entries; if you previously exported on a different device, any photo references that don't exist on this device are skipped (markdown carries paths only).
+      </dd>
+      <dt>Optional lock</dt><dd>Same opt-in biometric lock as the Birthdays tool. Authentication is done entirely by Android's secure subsystem; no biometric data is exposed to Poof, and only an on/off preference is stored.</dd>
+    </dl>
+  </section>
+
   <h2>What leaves your device</h2>
 
   <p>Two tools, and only when you use them.</p>
