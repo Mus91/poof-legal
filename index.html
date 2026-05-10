@@ -459,10 +459,10 @@
   <section class="tool-section">
     <h3>4. Contacts and call history</h3>
     <dl class="label-grid">
-      <dt>Tools</dt><dd>Call Log / Contacts tool.</dd>
-      <dt>Accessed</dt><dd>Names, phone numbers, and call entries (incoming/outgoing/missed, date, duration) via Android's standard Contacts and Call Log providers.</dd>
-      <dt>Used for</dt><dd>Displaying them on screen so you can browse your contacts and view a 7-day call summary.</dd>
-      <dt>Goes to</dt><dd class="nowhere">Nowhere. Nothing is persisted to disk or transmitted. Closing the tool clears the in-memory list.</dd>
+      <dt>Tools</dt><dd>Call Log / Contacts tool, Birthdays tool (optional "Import from Contacts" action).</dd>
+      <dt>Accessed</dt><dd>Names, phone numbers, and call entries (incoming/outgoing/missed, date, duration) via Android's standard Contacts and Call Log providers. The Birthdays tool additionally reads the birthday field and the contact photo URI of contacts that have one.</dd>
+      <dt>Used for</dt><dd>Displaying contacts and call history on screen so you can browse them. In the Birthdays tool, the contacts you pick from the import dialog are saved as on-device birthday entries — name, date, and (if available) a copy of the contact's photo are written to the tool's local database / private files directory. Photos are downscaled and stored only on this device.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere. Nothing is transmitted. The Call Log / Contacts tool clears its in-memory list when closed; Birthdays entries persist on this device until you delete them from the tool.</dd>
     </dl>
   </section>
 
@@ -523,6 +523,16 @@
       <dt>Tools</dt><dd>Several tools (Base64 encoder, base converter, unit converter, NFC writer, coordinate paste, etc.) include a "Paste from clipboard" button. The Universal Inspector also reads the clipboard once on app launch to detect shared text and route it to the right tool.</dd>
       <dt>Used for</dt><dd>Showing the pasted content in the relevant tool's input field so you can act on it.</dd>
       <dt>Goes to</dt><dd class="nowhere">Nowhere. Clipboard contents are not persisted unless you explicitly save them inside a tool (e.g. saving a generated QR code to QR History).</dd>
+    </dl>
+  </section>
+
+  <section class="tool-section">
+    <h3>10. Personal dates (Birthdays tool)</h3>
+    <dl class="label-grid">
+      <dt>Tool</dt><dd>Birthdays — track birthdays and anniversaries with reminders.</dd>
+      <dt>Accessed</dt><dd>Names, dates, optional notes, and optional photos that <em>you</em> add to the tool. Photos can be added either by picking one from your gallery using Android's system Photo Picker, or by importing birthdays from your Contacts (in which case the contact's existing photo is brought in alongside the birthday date).</dd>
+      <dt>Used for</dt><dd>Storing the entries you create in the tool's on-device database. Photos are downscaled to roughly 1024 px on the long edge and written to the app's private files directory so the tool keeps working even if the source image is later moved or deleted from your gallery. The same data drives the on-screen list, the home-screen widget, the optional reminder notifications, and the "Send a wish" share image you can generate from an entry.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere. Entries and photos live only on this device and are deleted when you delete the entry (or use "Delete all"). Sharing a wish image goes through Android's standard share sheet to whichever app you pick — Poof does not upload anything on its own.</dd>
     </dl>
   </section>
 
