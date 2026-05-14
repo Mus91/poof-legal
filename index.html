@@ -461,7 +461,7 @@
     <dl class="label-grid">
       <dt>Tools</dt><dd>Call Log / Contacts tool, Birthdays tool (optional "Import from Contacts" action).</dd>
       <dt>Accessed</dt><dd>Names, phone numbers, and call entries (incoming/outgoing/missed, date, duration) via Android's standard Contacts and Call Log providers. The Birthdays tool additionally reads the birthday field and the contact photo URI of contacts that have one.</dd>
-      <dt>Used for</dt><dd>Displaying contacts and call history on screen so you can browse them. In the Birthdays tool, the contacts you pick from the import dialog are saved as on-device birthday entries — name, date, and (if available) a copy of the contact's photo are written to the tool's local database / private files directory. Photos are downscaled and stored only on this device.</dd>
+      <dt>Used for</dt><dd>Displaying contacts and call history on screen so you can browse them. In the Birthdays tool, the contacts you pick from the import dialog are saved as on-device birthday entries: name, date, and (if available) a copy of the contact's photo are written to the tool's local database / private files directory. Photos are downscaled and stored only on this device.</dd>
       <dt>Goes to</dt><dd class="nowhere">Nowhere. Nothing is transmitted. The Call Log / Contacts tool clears its in-memory list when closed; Birthdays entries persist on this device until you delete them from the tool.</dd>
     </dl>
   </section>
@@ -529,25 +529,25 @@
   <section class="tool-section">
     <h3>10. Personal dates (Birthdays tool)</h3>
     <dl class="label-grid">
-      <dt>Tool</dt><dd>Birthdays — track birthdays and anniversaries with reminders.</dd>
+      <dt>Tool</dt><dd>Birthdays: track birthdays and anniversaries with reminders.</dd>
       <dt>Accessed</dt><dd>Names, dates, optional notes, and optional photos that <em>you</em> add to the tool. Photos can be added either by picking one from your gallery using Android's system Photo Picker, or by importing birthdays from your Contacts (in which case the contact's existing photo is brought in alongside the birthday date).</dd>
       <dt>Used for</dt><dd>Storing the entries you create in the tool's on-device database. Photos are downscaled to roughly 1024 px on the long edge and written to the app's private files directory so the tool keeps working even if the source image is later moved or deleted from your gallery. The same data drives the on-screen list, the home-screen widget, the optional reminder notifications, and the "Send a wish" share image you can generate from an entry.</dd>
-      <dt>Goes to</dt><dd class="nowhere">Nowhere. Entries and photos live only on this device and are deleted when you delete the entry (or use "Delete all"). Sharing a wish image goes through Android's standard share sheet to whichever app you pick — Poof does not upload anything on its own.</dd>
-      <dt>Optional lock</dt><dd>The tool offers an opt-in "Lock with biometric" toggle. When on, opening Birthdays requires biometric authentication (fingerprint / face) or, as a fallback, your device PIN / pattern / password. The biometric match happens entirely inside Android's secure subsystem — no biometric data ever reaches Poof. Only a single on/off preference is stored. The lock gates the screen; the underlying entries continue to live in the same on-device storage as before.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere. Entries and photos live only on this device and are deleted when you delete the entry (or use "Delete all"). Sharing a wish image goes through Android's standard share sheet to whichever app you pick. Poof does not upload anything on its own.</dd>
+      <dt>Optional lock</dt><dd>The tool offers an opt-in "Lock with biometric" toggle. When on, opening Birthdays requires biometric authentication (fingerprint / face) or, as a fallback, your device PIN / pattern / password. The biometric match happens entirely inside Android's secure subsystem. No biometric data ever reaches Poof. Only a single on/off preference is stored. The lock gates the screen; the underlying entries continue to live in the same on-device storage as before.</dd>
     </dl>
   </section>
 
   <section class="tool-section">
     <h3>11. Journal (Diary tool)</h3>
     <dl class="label-grid">
-      <dt>Tool</dt><dd>Diary — private on-device journal with one entry per day, mood tracking, photos, calendar view, streaks, daily reminders, and an optional biometric lock.</dd>
+      <dt>Tool</dt><dd>Diary: private on-device journal with one entry per day, mood tracking, photos, calendar view, streaks, daily reminders, and an optional biometric lock.</dd>
       <dt>Accessed</dt><dd>The text, mood selection, and photos you choose to attach to each daily entry. Photos are added by picking from your gallery using Android's system Photo Picker (up to 5 per entry). The tool reads your device's wall clock and time zone so the daily reminder fires at the time you configure.</dd>
       <dt>Used for</dt><dd>Storing entries in the tool's on-device database. Attached photos are downscaled to roughly 1600 px on the long edge and written to the app's private files directory so they keep working even if the source is later moved or deleted from your gallery. The same data drives the in-app calendar, streak counter, mood chart, "On this day" memory card, the home-screen widget (today's mood + streak), and the optional daily reminder notification.</dd>
       <dt>Goes to</dt><dd class="nowhere">Nowhere. Entries and photos live only on this device and are deleted when you remove the entry, use "Delete all", or uninstall the app. Sharing exports through Android's standard share sheet routes to whichever app you choose; Poof does not upload anything on its own.</dd>
-      <dt>Exports you can create</dt><dd>The tool offers two export formats via Android's system file picker (you choose the destination — local folder, Drive, email attachment, anywhere):
+      <dt>Exports you can create</dt><dd>The tool offers two export formats via Android's system file picker (you choose the destination: local folder, Drive, email attachment, anywhere):
         <ul>
-          <li><strong>Markdown</strong> — one text file containing every entry's date, mood, and content. Photos are <em>not</em> included; the markdown is plain text.</li>
-          <li><strong>PDF</strong> — a fully rendered document containing every entry's text and attached photos, paginated. Used for portable backups or printing.</li>
+          <li><strong>Markdown</strong>: one text file containing every entry's date, mood, and content. Photos are <em>not</em> included; the markdown is plain text.</li>
+          <li><strong>PDF</strong>: a fully rendered document containing every entry's text and attached photos, paginated. Used for portable backups or printing.</li>
         </ul>
         Importing markdown back into the tool restores the text + mood entries; if you previously exported on a different device, any photo references that don't exist on this device are skipped (markdown carries paths only).
       </dd>
@@ -558,7 +558,7 @@
   <section class="tool-section">
     <h3>12. Authenticator (two-factor codes)</h3>
     <dl class="label-grid">
-      <dt>Tool</dt><dd>Authenticator — generates the rotating two-factor-authentication codes for your accounts.</dd>
+      <dt>Tool</dt><dd>Authenticator: generates the rotating two-factor-authentication codes for your accounts.</dd>
       <dt>Accessed</dt><dd>The secret keys for your 2FA accounts. You add a key either by scanning the setup QR code your provider shows (using the camera, processed on-device) or by typing the key in manually.</dd>
       <dt>Used for</dt><dd>Storing each secret key in the tool's on-device database so the app can generate your codes. Every key is encrypted at rest using the Android Keystore (hardware-backed on devices that support it). Codes are computed locally from the key and the current time; the tool makes no network requests.</dd>
       <dt>Goes to</dt><dd class="nowhere">Nowhere on its own. The secret keys never leave your device unless you choose to export a backup (below).</dd>
