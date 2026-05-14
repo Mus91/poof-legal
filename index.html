@@ -404,7 +404,7 @@
       <span>Poof</span>
     </div>
     <h1>Privacy Policy</h1>
-    <p class="effective-date">Effective May 9, 2026</p>
+    <p class="effective-date">Effective May 14, 2026</p>
   </header>
 
   <p>This document explains exactly what data Poof accesses on your device, what it does with that data, and what (if anything) leaves your device. Poof is built on three commitments:</p>
@@ -439,7 +439,7 @@
   <section class="tool-section">
     <h3>2. Camera</h3>
     <dl class="label-grid">
-      <dt>Tools</dt><dd>QR Generator/Scanner, Document Scanner, Magnifier, Camera Inspector, Image OCR, Live Color Picker.</dd>
+      <dt>Tools</dt><dd>QR Generator/Scanner, Document Scanner, Magnifier, Camera Inspector, Image OCR, Live Color Picker, Authenticator (scanning a two-factor setup QR code).</dd>
       <dt>Accessed</dt><dd>Camera frames in real time.</dd>
       <dt>Used for</dt><dd>On-device processing using Google's ML Kit (the on-device variant: no Firebase ML, no Google Cloud Vision). Frames are analyzed in memory for barcodes, text, document edges, or color.</dd>
       <dt>Goes to</dt><dd class="nowhere">Nowhere. No frames are saved. No frames are uploaded.</dd>
@@ -555,6 +555,18 @@
     </dl>
   </section>
 
+  <section class="tool-section">
+    <h3>12. Authenticator (two-factor codes)</h3>
+    <dl class="label-grid">
+      <dt>Tool</dt><dd>Authenticator — generates the rotating two-factor-authentication codes for your accounts.</dd>
+      <dt>Accessed</dt><dd>The secret keys for your 2FA accounts. You add a key either by scanning the setup QR code your provider shows (using the camera, processed on-device) or by typing the key in manually.</dd>
+      <dt>Used for</dt><dd>Storing each secret key in the tool's on-device database so the app can generate your codes. Every key is encrypted at rest using the Android Keystore (hardware-backed on devices that support it). Codes are computed locally from the key and the current time; the tool makes no network requests.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere on its own. The secret keys never leave your device unless you choose to export a backup (below).</dd>
+      <dt>Backup &amp; restore</dt><dd>The tool can export an encrypted backup of your accounts through Android's system file picker, to a destination <em>you</em> choose (local folder, Drive, email attachment, anywhere). The backup file is encrypted with a password <em>you</em> set; that password is never stored, and Poof cannot recover it or read the backup without it. Restoring reads such a file back. Poof does not upload or sync anything on its own.</dd>
+      <dt>Optional lock</dt><dd>Same opt-in biometric lock as the Birthdays and Diary tools. Authentication is handled entirely by Android's secure subsystem; no biometric data is exposed to Poof, and only an on/off preference is stored.</dd>
+    </dl>
+  </section>
+
   <h2>What leaves your device</h2>
 
   <p>Two tools, and only when you use them.</p>
@@ -584,7 +596,7 @@
       <li><strong>No advertising.</strong> No AdMob, Unity Ads, AppLovin, IronSource, etc.</li>
       <li><strong>No accounts.</strong> No sign-in, no email collection, no profile.</li>
       <li><strong>No device identifiers.</strong> No GAID, ANDROID_ID, IMEI, MAC address.</li>
-      <li><strong>No cloud backup.</strong> Auto-backup and device-transfer rules are disabled, so your Poof data does not go to Google Drive even if the rest of your phone does.</li>
+      <li><strong>No cloud backup.</strong> Auto-backup and device-transfer rules are disabled, so your Poof data does not go to Google Drive even if the rest of your phone does. The Authenticator tool's optional backup is different: it is an export <em>you</em> trigger yourself, encrypted with <em>your</em> password, saved wherever you choose.</li>
       <li><strong>No data selling.</strong> There is no data to sell. There is no buyer.</li>
     </ul>
   </div>
@@ -618,7 +630,7 @@
   </div>
 
   <footer>
-    Poof | Privacy Policy · Effective May 9, 2026
+    Poof | Privacy Policy · Effective May 14, 2026
   </footer>
 
 </main>
