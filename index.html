@@ -580,7 +580,7 @@
 
   <h2>What leaves your device</h2>
 
-  <p>Three tools, and only when you use them.</p>
+  <p>Four tools, and only when you use them.</p>
 
   <section class="tool-section">
     <h3>Speed Test → Cloudflare</h3>
@@ -606,6 +606,12 @@
       <li>https://dns.google/resolve (Google Public DNS)</li>
     </ul>
     <p>In Compare mode the same request is sent in parallel to both so you can see how their answers differ. In Single mode only the resolver you chose is contacted. The tool can also resolve via the device's system DNS for A and AAAA records (your phone's normal resolver path, controlled by Android Settings or Private DNS), in which case the request goes wherever Android sends it. Each resolver's privacy policy applies to its side: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a>, <a href="https://developers.google.com/speed/public-dns/privacy" target="_blank" rel="noopener">Google Public DNS</a>.</p>
+  </section>
+
+  <section class="tool-section">
+    <h3>What's My IP → ipwho.is</h3>
+    <p>When you open the What's My IP tool, it makes one request to <code>https://ipwho.is/</code>. The request body is empty; the service identifies you by the source IP of the request itself (the same way any website sees your IP). The response contains your public IP address plus geolocation and network metadata (city, region, country, ISP, ASN, timezone) which the tool displays on the screen.</p>
+    <p>Nothing about you beyond your source IP is sent. There is no API key, no account, no device identifier. The tool does not store the result; closing the screen discards it. ipwho.is's privacy policy applies to their side: <a href="https://ipwho.is/" target="_blank" rel="noopener">ipwho.is</a>.</p>
   </section>
 
   <p>No personally identifying information is sent to any of these services. All requests are made from your device's IP (same as any web browser) and contain no Poof-assigned user ID or device identifier (because none exists).</p>
