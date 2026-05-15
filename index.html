@@ -599,14 +599,13 @@
   </section>
 
   <section class="tool-section">
-    <h3>DNS Lookup → Cloudflare, Google, Quad9</h3>
+    <h3>DNS Lookup → Cloudflare, Google</h3>
     <p>When you run a DNS lookup, the tool sends the hostname or IP you typed to one or more public DNS-over-HTTPS resolvers and shows you what they returned. The request contains only the hostname (or IP for reverse lookups) and the record type (A, AAAA, MX, etc.) you picked. The endpoints used are:</p>
     <ul class="endpoints">
       <li>https://1.1.1.1/dns-query (Cloudflare)</li>
       <li>https://dns.google/resolve (Google Public DNS)</li>
-      <li>https://dns.quad9.net/dns-query (Quad9)</li>
     </ul>
-    <p>In Compare mode the same request is sent in parallel to all three so you can see how their answers differ. In Single mode only the resolver you chose is contacted. The tool can also resolve via the device's system DNS for A and AAAA records (your phone's normal resolver path, controlled by Android Settings or Private DNS), in which case the request goes wherever Android sends it. Each resolver's privacy policy applies to its side: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a>, <a href="https://developers.google.com/speed/public-dns/privacy" target="_blank" rel="noopener">Google Public DNS</a>, <a href="https://quad9.net/privacy/" target="_blank" rel="noopener">Quad9</a>.</p>
+    <p>In Compare mode the same request is sent in parallel to both so you can see how their answers differ. In Single mode only the resolver you chose is contacted. The tool can also resolve via the device's system DNS for A and AAAA records (your phone's normal resolver path, controlled by Android Settings or Private DNS), in which case the request goes wherever Android sends it. Each resolver's privacy policy applies to its side: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a>, <a href="https://developers.google.com/speed/public-dns/privacy" target="_blank" rel="noopener">Google Public DNS</a>.</p>
   </section>
 
   <p>No personally identifying information is sent to any of these services. All requests are made from your device's IP (same as any web browser) and contain no Poof-assigned user ID or device identifier (because none exists).</p>
