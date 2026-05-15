@@ -609,9 +609,14 @@
   </section>
 
   <section class="tool-section">
-    <h3>What's My IP → ipwho.is</h3>
-    <p>When you open the What's My IP tool, it makes one request to <code>https://ipwho.is/</code>. The request body is empty; the service identifies you by the source IP of the request itself (the same way any website sees your IP). The response contains your public IP address plus geolocation and network metadata (city, region, country, ISP, ASN, timezone) which the tool displays on the screen.</p>
-    <p>Nothing about you beyond your source IP is sent. There is no API key, no account, no device identifier. The tool does not store the result; closing the screen discards it. ipwho.is's privacy policy applies to their side: <a href="https://ipwho.is/" target="_blank" rel="noopener">ipwho.is</a>.</p>
+    <h3>What's My IP → ipwho.is, icanhazip.com</h3>
+    <p>When you open the What's My IP tool, it makes up to three requests, all in parallel:</p>
+    <ul class="endpoints">
+      <li>https://ipwho.is/ : returns your public IP plus geolocation and network metadata (city, region, country, ISP, ASN, timezone). Whichever IP version your device's preferred stack chose comes back here.</li>
+      <li>https://ipv4.icanhazip.com : returns your IPv4 address as plain text, or fails silently if your network has no IPv4 path.</li>
+      <li>https://ipv6.icanhazip.com : returns your IPv6 address as plain text, or fails silently if your network has no IPv6 path.</li>
+    </ul>
+    <p>Each service identifies you by the source IP of the request itself, the same way any website sees your IP. No request body, no API key, no account, no device identifier. The tool does not store the result; closing the screen discards it. icanhazip.com is operated by Cloudflare. The relevant privacy policies are: <a href="https://ipwho.is/" target="_blank" rel="noopener">ipwho.is</a>, <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a>.</p>
   </section>
 
   <p>No personally identifying information is sent to any of these services. All requests are made from your device's IP (same as any web browser) and contain no Poof-assigned user ID or device identifier (because none exists).</p>
