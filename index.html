@@ -404,7 +404,7 @@
       <span>Poof</span>
     </div>
     <h1>Privacy Policy</h1>
-    <p class="effective-date">Effective May 15, 2026</p>
+    <p class="effective-date">Effective May 16, 2026</p>
   </header>
 
   <p>This document explains exactly what data Poof accesses on your device, what it does with that data, and what (if anything) leaves your device. Poof is built on three commitments:</p>
@@ -578,6 +578,16 @@
     </dl>
   </section>
 
+  <section class="tool-section">
+    <h3>14. NFC Tags</h3>
+    <dl class="label-grid">
+      <dt>Tool</dt><dd>NFC Tags: read, write, erase, clone, and password-protect the small NFC stickers and tags you tap your phone against.</dd>
+      <dt>Accessed</dt><dd>The contents of a tag (URL, text, Wi-Fi credentials, contact details, etc.) when you tap one against the phone, plus the tag's unique chip identifier (UID). For the Protect feature, the 4-character password you type into the form.</dd>
+      <dt>Used for</dt><dd>Displaying what's on a scanned tag, writing the content you enter onto a tag, cloning one tag's contents onto another, and (on NTAG213 / 215 / 216 chips) setting or removing an NTAG21x password. A short list of recent scans (up to 20) and your saved Write templates are kept in on-device storage so you can find them again later. When you set a password on a tag, the password is stored on the device (keyed by the tag's UID) so subsequent writes to the same tag don't ask for it again; choosing "Remove" in Protect mode clears it from the device.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere. All NFC traffic is between your phone and the physical tag in front of it. Scanned content, saved templates, recent-scan summaries, and remembered passwords all live only on this device, and the tool makes no network requests.</dd>
+    </dl>
+  </section>
+
   <h2>What leaves your device</h2>
 
   <p>Five tools, and only when you use them.</p>
@@ -669,7 +679,7 @@
   </div>
 
   <footer>
-    Poof | Privacy Policy · Effective May 15, 2026
+    Poof | Privacy Policy · Effective May 16, 2026
   </footer>
 
 </main>
