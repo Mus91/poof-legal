@@ -580,7 +580,7 @@
 
   <h2>What leaves your device</h2>
 
-  <p>Six tools, and only when you use them.</p>
+  <p>Five tools, and only when you use them.</p>
 
   <section class="tool-section">
     <h3>Speed Test → Cloudflare</h3>
@@ -606,18 +606,6 @@
       <li>https://dns.google/resolve (Google Public DNS)</li>
     </ul>
     <p>In Compare mode the same request is sent in parallel to both so you can see how their answers differ. In Single mode only the resolver you chose is contacted. The tool can also resolve via the device's system DNS for A and AAAA records (your phone's normal resolver path, controlled by Android Settings or Private DNS), in which case the request goes wherever Android sends it. Each resolver's privacy policy applies to its side: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a>, <a href="https://developers.google.com/speed/public-dns/privacy" target="_blank" rel="noopener">Google Public DNS</a>.</p>
-  </section>
-
-  <section class="tool-section">
-    <h3>Crypto Prices → CoinGecko, alternative.me</h3>
-    <p>When you open the Crypto Prices tool, it fetches market data from two public services:</p>
-    <ul class="endpoints">
-      <li>https://api.coingecko.com/api/v3/coins/markets : the top-100 list with prices, 24h moves, sparklines, and market caps for your chosen fiat currency.</li>
-      <li>https://api.coingecko.com/api/v3/global : total market cap, BTC dominance, 24h change.</li>
-      <li>https://api.coingecko.com/api/v3/coins/&lt;id&gt;/market_chart : price history for the coin you opened, scoped to the time range you picked.</li>
-      <li>https://api.alternative.me/fng/ : the daily Fear &amp; Greed sentiment value.</li>
-    </ul>
-    <p>Each request carries only the coin id, currency, and time range you picked. No API key, no account, no device identifier. Your watchlist and currency preference live on your device only. CoinGecko's privacy policy and alternative.me's terms apply to their respective sides: <a href="https://www.coingecko.com/en/privacy" target="_blank" rel="noopener">CoinGecko</a>, <a href="https://alternative.me/" target="_blank" rel="noopener">alternative.me</a>.</p>
   </section>
 
   <section class="tool-section">
