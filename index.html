@@ -428,12 +428,12 @@
   <section class="tool-section">
     <h3>1. Location</h3>
     <dl class="label-grid">
-      <dt>Tools</dt><dd>Prayer Times, Sun &amp; Moon (sunrise/sunset), Qibla.</dd>
-      <dt>Accessed</dt><dd>Your device's GPS coordinates (latitude/longitude) via Android's standard Location Manager. Both <em>Approximate</em> and <em>Precise</em> location may be requested; coarse coordinates are used as fallback.</dd>
-      <dt>Used for</dt><dd>Calculating prayer times, sunrise/sunset, and Qibla bearing locally on the device. Prayer Times stores your last-known coordinates in app-private storage so it can compute prayer times offline.</dd>
-      <dt>Goes to</dt><dd class="nowhere">Nowhere. Coordinates never leave your device. There is no Poof server.</dd>
+      <dt>Tools</dt><dd>Prayer Times, Sun &amp; Moon (sunrise/sunset), Qibla, GPS Logger.</dd>
+      <dt>Accessed</dt><dd>Your device's GPS coordinates (latitude/longitude) via Android's standard Location Manager. Both <em>Approximate</em> and <em>Precise</em> location may be requested; coarse coordinates are used as fallback. GPS Logger additionally records a stream of coordinates over time while you have a recording session active, and may use the <em>Background location</em> permission so the session can continue while the screen is off (you explicitly grant this via Android Settings; the recording works without it while the screen is on and the foreground notification is visible).</dd>
+      <dt>Used for</dt><dd>Calculating prayer times, sunrise/sunset, and Qibla bearing locally on the device. Prayer Times stores your last-known coordinates in app-private storage so it can compute prayer times offline. GPS Logger stores the recorded track (a list of points with timestamps and optional altitude/accuracy/speed) in a local database on your device; you can rename, export, or delete tracks at any time.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere. Coordinates never leave your device. There is no Poof server. GPS tracks exported as GPX or KML are saved to a destination you pick via the system share sheet; nothing is uploaded by Poof.</dd>
     </dl>
-    <p class="opt-out">All three tools accept manual city entry instead of GPS. Location permission can be revoked any time from Android Settings.</p>
+    <p class="opt-out">Prayer Times, Sun &amp; Moon, and Qibla accept manual city entry instead of GPS. GPS Logger requires GPS to record. Location permission can be revoked any time from Android Settings.</p>
   </section>
 
   <section class="tool-section">
