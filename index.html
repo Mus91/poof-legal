@@ -449,10 +449,10 @@
   <section class="tool-section">
     <h3>3. Microphone</h3>
     <dl class="label-grid">
-      <dt>Tools</dt><dd>Decibel Meter.</dd>
-      <dt>Accessed</dt><dd>Real-time audio amplitude (RMS) only.</dd>
-      <dt>Used for</dt><dd>Displaying the current sound level. The audio buffer is read, the loudness measured, and discarded.</dd>
-      <dt>Goes to</dt><dd class="nowhere">Nowhere. No audio is recorded or transmitted.</dd>
+      <dt>Tools</dt><dd>Decibel Meter, Voice Recorder.</dd>
+      <dt>Accessed</dt><dd>Decibel Meter reads real-time audio amplitude (RMS) only — the audio buffer is sampled, the loudness measured, and discarded. Voice Recorder captures the microphone stream and writes it to an AAC (.m4a) file on this device while you record.</dd>
+      <dt>Used for</dt><dd>Decibel Meter: displaying the current sound level on screen. Voice Recorder: saving the recording to your Music/Poof folder as an audio file you own. A foreground notification appears while recording so the session survives backgrounding; tapping "Stop and save" from the notification finalises the file.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere. No audio is transmitted. Decibel Meter never records to disk. Voice Recorder writes the recording only to Music/Poof on this device; nothing is uploaded, transcribed, or analysed. Microphone access can be revoked any time from Android Settings > Apps > Poof > Permissions.</dd>
     </dl>
   </section>
 
