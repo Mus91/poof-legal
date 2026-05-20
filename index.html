@@ -500,10 +500,10 @@
   <section class="tool-section">
     <h3>7. Files and media you select</h3>
     <dl class="label-grid">
-      <dt>Tools</dt><dd>PDF tools (merge, split, compress, watermark, sign, redact, etc.), Image tools (compress, convert, redact, resize, watermark, EXIF viewer, etc.), Video Compressor, OCR, Document Scanner.</dd>
+      <dt>Tools</dt><dd>PDF tools (merge, split, compress, watermark, sign, redact, etc.), Image tools (compress, convert, redact, resize, watermark, EXIF viewer, etc.), Video tools (Compressor, Trimmer, Frame Extractor, Video to Audio, Rotate, Speed Changer, Video to GIF, Merger), OCR, Document Scanner.</dd>
       <dt>Accessed</dt><dd>Only the specific files you pick using Android's system file picker, or shared into Poof via the system share sheet. Poof does not browse your storage.</dd>
-      <dt>Used for</dt><dd>Processing on-device using local libraries (PDFBox, Android image APIs, Android Media3 hardware codecs for video, on-device ML Kit). Outputs are saved to a destination <em>you</em> choose (the gallery for video and image outputs, a folder you pick for PDFs).</dd>
-      <dt>Goes to</dt><dd class="nowhere">Nowhere. No file is uploaded. Temporary working files in the app's cache are deleted when the operation finishes. Long-running operations such as video compression continue in the background via a foreground service, which posts a progress notification while it works and stops as soon as the queue is done.</dd>
+      <dt>Used for</dt><dd>Processing on-device using local libraries (PDFBox, Android image APIs, Android Media3 hardware codecs for video, on-device ML Kit, a pure-Java GIF encoder for Video to GIF). Outputs are saved to a destination <em>you</em> choose (the gallery for video, image, and GIF outputs, a folder you pick for PDFs).</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere. No file is uploaded. Temporary working files in the app's cache are deleted when the operation finishes. Long-running operations such as video compression, trimming, GIF encoding, and merging continue in the background via a foreground service, which posts a progress notification while it works and stops as soon as the queue is done.</dd>
     </dl>
   </section>
 
