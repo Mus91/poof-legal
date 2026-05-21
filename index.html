@@ -404,7 +404,7 @@
       <span>Poof</span>
     </div>
     <h1>Privacy Policy</h1>
-    <p class="effective-date">Effective May 16, 2026</p>
+    <p class="effective-date">Effective May 21, 2026</p>
   </header>
 
   <p>This document explains exactly what data Poof accesses on your device, what it does with that data, and what (if anything) leaves your device. Poof is built on three commitments:</p>
@@ -539,7 +539,18 @@
   </section>
 
   <section class="tool-section">
-    <h3>11. Journal (Diary tool)</h3>
+    <h3>11. Productivity: timers and trackers</h3>
+    <dl class="label-grid">
+      <dt>Tools</dt><dd>Pomodoro Timer, Habit Tracker, Time Tracker, Speed Reader.</dd>
+      <dt>Accessed</dt><dd>Whatever you type into each tool: project / habit / focus-session names and colours, the times you pick for reminders, the durations you configure for focus and break cycles, the hourly rate you optionally set on a Time Tracker project (Pro), and the text you paste or share into Speed Reader.</dd>
+      <dt>Used for</dt><dd>Pomodoro stores its session durations + today's focus-session count in app-private preferences. Habit Tracker stores each habit (name, colour, optional daily reminder time) and your completion check-marks in a local database. Time Tracker stores each project and every tracked entry (project, start time, end time) in a separate local database, plus drives a foreground-service notification while a timer is running so you can stop without opening the app. Speed Reader stores only its reader settings (words-per-minute, font size, focal-letter highlight, pause-at-punctuation); the text you paste or share is held in memory while you read it, never written to disk.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere. All four tools are entirely on-device. None of them make a network request. Time Tracker's optional CSV export goes through Android's system file picker to a destination <em>you</em> choose; Poof does not upload anything on its own.</dd>
+      <dt>Reminders</dt><dd>Habit Tracker reminders are scheduled via Android's AlarmManager and fire as a notification at the time you set. After a device reboot they re-schedule automatically. Stop a reminder from the habit's detail screen or by deleting the habit. The Pomodoro and Time Tracker live notifications are tied to the running timer — they disappear when you stop it.</dd>
+    </dl>
+  </section>
+
+  <section class="tool-section">
+    <h3>12. Diary</h3>
     <dl class="label-grid">
       <dt>Tool</dt><dd>Diary: private on-device journal with one entry per day, mood tracking, photos, calendar view, streaks, daily reminders, and an optional biometric lock.</dd>
       <dt>Accessed</dt><dd>The text, mood selection, and photos you choose to attach to each daily entry. Photos are added by picking from your gallery using Android's system Photo Picker (up to 5 per entry). The tool reads your device's wall clock and time zone so the daily reminder fires at the time you configure.</dd>
@@ -557,7 +568,7 @@
   </section>
 
   <section class="tool-section">
-    <h3>12. Authenticator (two-factor codes)</h3>
+    <h3>13. Authenticator (two-factor codes)</h3>
     <dl class="label-grid">
       <dt>Tool</dt><dd>Authenticator: generates the rotating two-factor-authentication codes for your accounts.</dd>
       <dt>Accessed</dt><dd>The secret keys for your 2FA accounts. You add a key either by scanning the setup QR code your provider shows (using the camera, processed on-device) or by typing the key in manually.</dd>
@@ -569,7 +580,7 @@
   </section>
 
   <section class="tool-section">
-    <h3>13. Loyalty Cards</h3>
+    <h3>14. Loyalty Cards</h3>
     <dl class="label-grid">
       <dt>Tool</dt><dd>Loyalty Cards: stores the barcodes from your supermarket, membership, gift, library, transit, and gym cards so you can show them at the till.</dd>
       <dt>Accessed</dt><dd>For each card you add: the store name you give it, the card number printed on it, the barcode symbology (e.g. Code 128, EAN-13), an optional note, an optional card-type label (Loyalty, Gift, Membership, etc.), and the tile colour you pick. You add a card either by scanning its barcode with the camera (processed on-device by Google's ML Kit) or by typing the number in manually.</dd>
@@ -580,7 +591,7 @@
   </section>
 
   <section class="tool-section">
-    <h3>14. NFC Tags</h3>
+    <h3>15. NFC Tags</h3>
     <dl class="label-grid">
       <dt>Tool</dt><dd>NFC Tags: read, write, erase, clone, and password-protect the small NFC stickers and tags you tap your phone against.</dd>
       <dt>Accessed</dt><dd>The contents of a tag (URL, text, Wi-Fi credentials, contact details, etc.) when you tap one against the phone, plus the tag's unique chip identifier (UID). For the Protect feature, the 4-character password you type into the form.</dd>
@@ -680,7 +691,7 @@
   </div>
 
   <footer>
-    Poof | Privacy Policy · Effective May 16, 2026
+    Poof | Privacy Policy · Effective May 21, 2026
   </footer>
 
 </main>
