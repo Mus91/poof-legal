@@ -614,6 +614,18 @@
     </dl>
   </section>
 
+  <section class="tool-section">
+    <h3>17. Encrypted Notes</h3>
+    <dl class="label-grid">
+      <dt>Tool</dt><dd>Encrypted Notes: plain-text notes encrypted on this device. Each note's title and body are encrypted independently with AES-256-GCM and a master key generated and held by Android's Keystore. The key requires user authentication (fingerprint, face, or screen-lock credential) before it can be used; once you authenticate, it stays usable for up to ten minutes so you can browse without re-prompting on every tap.</dd>
+      <dt>Accessed</dt><dd>Only the text you type into the tool. Nothing else.</dd>
+      <dt>Used for</dt><dd>Storing each note as a row in an on-device database (<code>encrypted_notes.db</code>). Title and body are stored as ciphertext BLOBs with a 12-byte IV prepended; the <code>updatedAtMillis</code> timestamp is in the clear so the list can sort by recency without decrypting. Decryption happens in memory only when the list is rendered or a note is opened for editing.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere. The tool makes no network requests. There is no cloud copy and no automatic backup. If you uninstall Poof, replace your screen-lock biometric, or use Android's "Clear data", the notes are unrecoverable by design.</dd>
+      <dt>Independent from Vault</dt><dd>Encrypted Notes uses a separate Keystore alias from Secure Vault. Losing access to one doesn't affect the other; each tool prompts for authentication separately the first time you enter it in a session.</dd>
+      <dt>Auto-lock</dt><dd>Notes re-lock the moment the whole app moves to the background. Re-entering the tool prompts for authentication again. The lock icon in the top bar locks manually without leaving the screen. Authentication is handled entirely by Android's secure subsystem; no biometric data is exposed to Poof, and only the master key's metadata is stored.</dd>
+    </dl>
+  </section>
+
   <h2>What leaves your device</h2>
 
   <p>Five tools, and only when you use them.</p>
