@@ -404,7 +404,7 @@
       <span>Poof</span>
     </div>
     <h1>Privacy Policy</h1>
-    <p class="effective-date">Effective May 22, 2026</p>
+    <p class="effective-date">Effective May 26, 2026</p>
   </header>
 
   <p>This document explains exactly what data Poof accesses on your device, what it does with that data, and what (if anything) leaves your device. Poof is built on three commitments:</p>
@@ -457,12 +457,12 @@
   </section>
 
   <section class="tool-section">
-    <h3>4. Contacts and call history</h3>
+    <h3>4. Contacts</h3>
     <dl class="label-grid">
-      <dt>Tools</dt><dd>Call Log / Contacts tool, Birthdays tool (optional "Import from Contacts" action).</dd>
-      <dt>Accessed</dt><dd>Names, phone numbers, and call entries (incoming/outgoing/missed, date, duration) via Android's standard Contacts and Call Log providers. The Birthdays tool additionally reads the birthday field and the contact photo URI of contacts that have one.</dd>
-      <dt>Used for</dt><dd>Displaying contacts and call history on screen so you can browse them. In the Birthdays tool, the contacts you pick from the import dialog are saved as on-device birthday entries: name, date, and (if available) a copy of the contact's photo are written to the tool's local database / private files directory. Photos are downscaled and stored only on this device.</dd>
-      <dt>Goes to</dt><dd class="nowhere">Nowhere. Nothing is transmitted. The Call Log / Contacts tool clears its in-memory list when closed; Birthdays entries persist on this device until you delete them from the tool.</dd>
+      <dt>Tools</dt><dd>Recent Contacts tool, Birthdays tool (optional "Import from Contacts" action).</dd>
+      <dt>Accessed</dt><dd>Names and phone numbers via Android's standard Contacts provider, plus the account type the contact belongs to (Device, SIM, Google) so Recent Contacts can filter by source. The Birthdays tool additionally reads the birthday field and the contact photo URI of contacts that have one. Call log is no longer accessed; the previous 7-day call-stats card was removed in May 2026.</dd>
+      <dt>Used for</dt><dd>Displaying recently-added contacts on screen so you can browse them. In the Birthdays tool, the contacts you pick from the import dialog are saved as on-device birthday entries: name, date, and (if available) a copy of the contact's photo are written to the tool's local database / private files directory. Photos are downscaled and stored only on this device.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere. Nothing is transmitted. The Recent Contacts tool clears its in-memory list when closed; Birthdays entries persist on this device until you delete them from the tool.</dd>
     </dl>
   </section>
 
@@ -721,7 +721,7 @@
   </div>
 
   <footer>
-    Poof | Privacy Policy · Effective May 21, 2026
+    Poof | Privacy Policy · Effective May 26, 2026
   </footer>
 
 </main>
