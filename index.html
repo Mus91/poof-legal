@@ -397,7 +397,7 @@
       <span>Poof</span>
     </div>
     <h1>Privacy Policy</h1>
-    <p class="effective-date">Effective June 11, 2026</p>
+    <p class="effective-date">Effective August 31, 2026</p>
   </header>
 
   <p>This document explains exactly what data Poof accesses on your device, what it does with that data, and what (if anything) leaves your device. Poof is built on three commitments:</p>
@@ -412,7 +412,7 @@
 
   <div class="callout">
     <h2>The short version</h2>
-    <p>Poof is a utility toolkit. Most tools work entirely on your device and never make a network request. Two tools (Speed Test and Currency Converter) make HTTP requests to Cloudflare and a public exchange-rate API respectively, and only when you actively use them. No request to any third party contains your contacts, files, location, notifications, or any user-identifying information.</p>
+    <p>Poof is a utility toolkit. Most tools work entirely on your device and never make a network request. Five tools do, and only when you actively use them: Speed Test, Currency Converter, DNS Lookup, URL Unshortener, and What&#39;s My IP. Each is described in full under &quot;What leaves your device&quot; below. No request to any third party contains your contacts, files, location, notifications, or any user-identifying information.</p>
     <p>When a tool needs access to something on your device (your camera, microphone, location, contacts, notifications, or installed apps), Android prompts you to grant permission, and you can revoke it at any time from Android Settings. Poof never accesses any of these without an explicit user action.</p>
   </div>
 
@@ -421,9 +421,9 @@
   <section class="tool-section">
     <h3>1. Location</h3>
     <dl class="label-grid">
-      <dt>Tools</dt><dd>Prayer Times, Sun &amp; Moon (sunrise/sunset), Qibla, GPS Logger, Altimeter.</dd>
+      <dt>Tools</dt><dd>Prayer Times, Sun &amp; Moon (sunrise/sunset), Qibla, GPS Logger, Altimeter, Parking Spot Saver.</dd>
       <dt>Accessed</dt><dd>Your device's GPS coordinates (latitude/longitude) via Android's standard Location Manager. Both <em>Approximate</em> and <em>Precise</em> location may be requested; coarse coordinates are used as fallback. GPS Logger additionally records a stream of coordinates over time while you have a recording session active, and may use the <em>Background location</em> permission so the session can continue while the screen is off (you explicitly grant this via Android Settings; the recording works without it while the screen is on and the foreground notification is visible).</dd>
-      <dt>Used for</dt><dd>Calculating prayer times, sunrise/sunset, and Qibla bearing locally on the device. Prayer Times stores your last-known coordinates in app-private storage so it can compute prayer times offline. GPS Logger stores the recorded track (a list of points with timestamps and optional altitude/accuracy/speed) in a local database on your device; you can rename, export, or delete tracks at any time.</dd>
+      <dt>Used for</dt><dd>Calculating prayer times, sunrise/sunset, and Qibla bearing locally on the device. Prayer Times stores your last-known coordinates in app-private storage so it can compute prayer times offline. GPS Logger stores the recorded track (a list of points with timestamps and optional altitude/accuracy/speed) in a local database on your device; you can rename, export, or delete tracks at any time. Parking Spot Saver stores the single spot you save, plus any note or photo you attach to it, in <code>parking-spots.db</code>, so it can point you back to the car later.</dd>
       <dt>Goes to</dt><dd class="nowhere">Nowhere. Coordinates never leave your device. There is no Poof server. GPS tracks exported as GPX or KML are saved to a destination you pick via the system share sheet; nothing is uploaded by Poof.</dd>
     </dl>
     <p class="opt-out">Prayer Times, Sun &amp; Moon, and Qibla accept manual city entry instead of GPS. GPS Logger requires GPS to record. Location permission can be revoked any time from Android Settings.</p>
@@ -623,6 +623,80 @@
     </dl>
   </section>
 
+  <section class="tool-section">
+    <h3>18. Medication Tracker</h3>
+    <dl class="label-grid">
+      <dt>Tool</dt><dd>Medication Tracker: the medicines you take, when to take them, and what you have taken.</dd>
+      <dt>Accessed</dt><dd>Only what you enter: medicine names, doses, forms, the times of day you want reminders, start and end dates, and the taken or skipped marks you tap against each scheduled dose.</dd>
+      <dt>Used for</dt><dd>Storing your medicines and their schedules in <code>medication-tracker.db</code> on this device, drawing the day-grouped dose timeline, and scheduling the reminder notifications you configure. Reminders fire through Android&#39;s AlarmManager and re-schedule themselves after a reboot.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere. This is health information and it is treated as such: it stays on this device, is never transmitted, and there is no cloud copy. Deleting a medicine deletes its schedule and its history. Uninstalling Poof deletes the database.</dd>
+      <dt>Notifications</dt><dd>A reminder notification names the medicine, because a reminder that does not is useless. If you would rather it did not appear on a lock screen, Android&#39;s per-app notification settings control that.</dd>
+    </dl>
+  </section>
+
+  <section class="tool-section">
+    <h3>19. Prayer and fasting records (Qada Tracker)</h3>
+    <dl class="label-grid">
+      <dt>Tool</dt><dd>Qada Tracker: a record of missed prayers and fasts, and of making them up.</dd>
+      <dt>Accessed</dt><dd>What you enter: a date range, which of the five prayers to count, how many days a month you do not pray, how many fasts you owe, and each entry you log as prayed, fasted, or settled by fidya. One preference records whether you count Witr as obligatory, so the tracker matches your own school rather than asserting a ruling you do not hold.</dd>
+      <dt>Used for</dt><dd>Keeping an append-only ledger in <code>qada-tracker.db</code>, from which the balance, your pace, and the projected finish are calculated. Your settings live in app-private storage under <code>qada_tracker</code>. An optional daily reminder is scheduled locally and never states the total.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere. None of it is transmitted and there is no cloud copy. Two parts of it are worth naming plainly, because they are sensitive: the Witr preference is effectively a note about your religious practice, and the &quot;days a month I do not pray&quot; figure is menstrual-cycle information. Both stay on this device, are used only to work out the numbers in this tool, and are deleted with the tool&#39;s data.</dd>
+    </dl>
+  </section>
+
+  <section class="tool-section">
+    <h3>20. Money you type in</h3>
+    <dl class="label-grid">
+      <dt>Tools</dt><dd>Zakat Calculator, Gold &amp; Silver, Subscription Tracker, Savings Goal.</dd>
+      <dt>Accessed</dt><dd>Figures you type. For zakat: cash, bank balances, money owed to you, business assets and debts, and the metal prices you read off a board. For Gold &amp; Silver: the weight, purity and price of individual pieces of jewellery. For Subscription Tracker: the name, price and renewal date of each subscription. For Savings Goal: the target and what you have put aside.</dd>
+      <dt>Used for</dt><dd>Working out the answer on this device, and keeping the records you choose to save: <code>zakat-records.db</code>, <code>gold-pieces.db</code>, <code>subscription-tracker.db</code> and <code>savings_goal.db</code>, with each tool&#39;s working sheet in app-private storage under <code>zakat_calculator</code> and <code>gold_calculator</code>. Subscription renewal reminders are scheduled locally.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere. No exchange rate, metal price, or figure you enter is sent anywhere. None of these tools makes a network request; the prices are ones you type, which is why they work with no signal. This is financial information about you and it never leaves the device.</dd>
+    </dl>
+  </section>
+
+  <section class="tool-section">
+    <h3>21. Settle Up (shared expenses)</h3>
+    <dl class="label-grid">
+      <dt>Tool</dt><dd>Settle Up: track what a group spent, split it, and work out who pays whom.</dd>
+      <dt>Accessed</dt><dd>The names you type for the people in the group, what each expense was for, its amount, who paid it, who it was split between, and any payments handed over. <strong>This is the one tool where what you enter is partly about other people, not only about you.</strong> They are names you type, not names read from your Contacts: Settle Up never touches your contact list.</dd>
+      <dt>Used for</dt><dd>Keeping the group&#39;s ledger in <code>settle-up.db</code> on this device, from which every balance and the settle-up list are calculated. Which group you had open and the currency you last used are kept in app-private storage under <code>settle_up</code>.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere on its own. Nothing syncs, there is no account, and the other people in the group are not contacted by Poof in any way. They do not need the app and are never sent anything by it.</dd>
+      <dt>What you send yourself</dt><dd>The tool produces a statement and a CSV listing the expenses, the shares and who pays whom, including the names you entered. These leave the device only when you choose to send them, through Android&#39;s share sheet, to an app you pick. That is the whole point of them: the rest of the group cannot see the ledger, so they get a message they can check. Once you send it, it is subject to whatever app you sent it with.</dd>
+      <dt>Deleting</dt><dd>Deleting a group deletes its people, expenses and payments. Uninstalling Poof deletes the database.</dd>
+    </dl>
+  </section>
+
+  <section class="tool-section">
+    <h3>22. PDF Fill: saved personal details</h3>
+    <dl class="label-grid">
+      <dt>Tool</dt><dd>PDF Fill: complete a PDF form on the device. The optional &quot;My details&quot; feature (Pro) is the part that stores anything.</dd>
+      <dt>Accessed</dt><dd>Only if you choose to use it, and only what you type into it: your name, email address, phone number, postal address, an ID number, and date of birth. Nothing is pre-filled from your Contacts, your accounts, or anywhere else on the device. The tool does not read your identity from the phone; you type it or it does not exist.</dd>
+      <dt>Used for</dt><dd>Storing those values in app-private storage under <code>pdf_fill_profile</code>, so that filling the same fields on the next form is one tap instead of retyping. They are written into a PDF only when you put them there, into the form you are filling on this device.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere. These details are never transmitted, never used for anything except the field you insert them into, and never shared between tools. Clearing them in the tool removes them; uninstalling Poof removes them.</dd>
+      <dt>The filled PDF</dt><dd>The document you produce is saved or shared where you choose, through Android&#39;s system file picker or share sheet. If the form contained your details, so does the file you just created, so send it the way you would send any completed form.</dd>
+    </dl>
+  </section>
+
+  <section class="tool-section">
+    <h3>23. Arabizi</h3>
+    <dl class="label-grid">
+      <dt>Tool</dt><dd>Arabizi: read Arabic written in Latin letters back in Arabic script, and the reverse.</dd>
+      <dt>Accessed</dt><dd>The message you type, paste, or share into the tool. This is often somebody else&#39;s private message, which is why it is handled the way it is.</dd>
+      <dt>Used for</dt><dd>Converting it on the device. <strong>The message itself is never written to disk.</strong> It is held only in the screen&#39;s saved state while you are looking at it and is gone when you leave. The only things stored are your chosen regional convention and the individual spellings you deliberately tap to remember, in app-private storage under <code>arabizi</code>.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere. The conversion is entirely local, with no dictionary lookup, no translation service, and no network request of any kind. Nothing you paste is uploaded.</dd>
+    </dl>
+  </section>
+
+  <section class="tool-section">
+    <h3>24. Everything else</h3>
+    <dl class="label-grid">
+      <dt>Tools</dt><dd>Every other tool in Poof: the converters, calculators, text and PDF utilities, image and video tools, timers, and the rest.</dd>
+      <dt>Accessed</dt><dd>Only what you hand them: the numbers you type, the text you paste, or the file you pick. Tools that need a file use Android&#39;s system picker, so they see the one file you chose and nothing else on your storage.</dd>
+      <dt>Used for</dt><dd>Doing the job on the device. Some remember your last settings (units, quality, presets) in app-private storage so you do not reconfigure them every time. Where a tool keeps a list you build up, it does so in its own local database.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere, unless the tool is one of the five named under &quot;What leaves your device&quot;. Results you save or share go where you send them, through Android&#39;s own picker or share sheet.</dd>
+    </dl>
+  </section>
+
   <h2>What leaves your device</h2>
 
   <p>Five tools, and only when you use them.</p>
@@ -718,7 +792,7 @@
   </div>
 
   <footer>
-    Poof | Privacy Policy · Effective June 11, 2026
+    Poof | Privacy Policy · Effective August 31, 2026
   </footer>
 
 </main>
