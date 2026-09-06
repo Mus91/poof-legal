@@ -688,7 +688,31 @@
   </section>
 
   <section class="tool-section">
-    <h3>24. Everything else</h3>
+    <h3>24. Vehicle Log</h3>
+    <dl class="label-grid">
+      <dt>Tool</dt><dd>Vehicle Log: keep a car&#39;s paperwork dates, servicing and fuel in one place, with reminders before something lapses.</dd>
+      <dt>Accessed</dt><dd>Only what you type or photograph yourself: the vehicle names you choose, document renewal dates, odometer readings, fuel fill-ups and their costs, service records, and any photos you attach to a record using the camera or the system picker. Nothing is read from the vehicle, from any insurer, or from anywhere else on the device.</dd>
+      <dt>Used for</dt><dd>Keeping the log in <code>vehicle-log.db</code> on this device, working out fuel economy and what falls due next, and posting reminder notifications on the device itself. Photos you attach are stored in app-private storage. Your reminder lead times live under <code>vehicle_log</code>.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere. Reminders are scheduled and shown by your own phone, not sent through any service. Nothing about your vehicle, your mileage or your spending is transmitted.</dd>
+      <dt>What you send yourself</dt><dd>The tool can produce a CSV of the log. It leaves the device only when you choose to share it, through Android&#39;s share sheet, to an app you pick.</dd>
+      <dt>Deleting</dt><dd>Deleting a vehicle deletes its documents, services, fuel records and photos. Uninstalling Poof deletes the database.</dd>
+    </dl>
+  </section>
+
+  <section class="tool-section">
+    <h3>25. Shopping Run</h3>
+    <dl class="label-grid">
+      <dt>Tool</dt><dd>Shopping Run: a grocery list that groups itself into aisles and learns the order you walk your own shop.</dd>
+      <dt>Accessed</dt><dd>The items you add, the store names you choose, and, if a shopping list is shared or pasted into the tool, the text of that message. That text is often written by somebody else in your household, which is why it is only ever read on the device, shown to you line by line, and added only when you press the button.</dd>
+      <dt>Used for</dt><dd>Keeping your lists, your finished trips, which aisle you keep each item in at each store, the order you tend to walk a store&#39;s aisles, and any shelf prices you choose to type, all in <code>shopping-run.db</code> on this device. The learning is nothing more than the order in which you ticked things off; it is computed and stored locally and describes your walk, not you. Display preferences live under <code>shopping_run</code>.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere. There is no sync and no account, which also means your list does not appear on anybody else&#39;s phone. The built-in item catalogue ships inside the app; searching it involves no network request.</dd>
+      <dt>What you send yourself</dt><dd>Sharing the list produces a plain text message, and Pro can export trips as a CSV. Both leave the device only when you choose to send them, through Android&#39;s share sheet or file picker, to an app you pick.</dd>
+      <dt>Deleting</dt><dd>Deleting a store deletes its list, trips, learned order and remembered aisles. Uninstalling Poof deletes the database.</dd>
+    </dl>
+  </section>
+
+  <section class="tool-section">
+    <h3>26. Everything else</h3>
     <dl class="label-grid">
       <dt>Tools</dt><dd>Every other tool in Poof: the converters, calculators, text and PDF utilities, image and video tools, timers, and the rest.</dd>
       <dt>Accessed</dt><dd>Only what you hand them: the numbers you type, the text you paste, or the file you pick. Tools that need a file use Android&#39;s system picker, so they see the one file you chose and nothing else on your storage.</dd>
