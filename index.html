@@ -412,7 +412,7 @@
 
   <div class="callout">
     <h2>The short version</h2>
-    <p>Poof is a utility toolkit. Most tools work entirely on your device and never make a network request. Five tools do, and only when you actively use them: Speed Test, Currency Converter, DNS Lookup, URL Unshortener, and What&#39;s My IP. Each is described in full under &quot;What leaves your device&quot; below. No request to any third party contains your contacts, files, location, notifications, or any user-identifying information.</p>
+    <p>Poof is a utility toolkit. Most tools work entirely on your device and never make a network request. Six tools do, and only when you actively use them: Speed Test, Currency Converter, DNS Lookup, URL Unshortener, What&#39;s My IP, and Recipes. Four of those contact a fixed service chosen by us. Two, URL Unshortener and Recipes, contact a web address <em>you</em> give them and nothing else. Each is described in full under &quot;What leaves your device&quot; below. No request to any third party contains your contacts, files, location, notifications, or any user-identifying information.</p>
     <p>When a tool needs access to something on your device (your camera, microphone, location, contacts, notifications, or installed apps), Android prompts you to grant permission, and you can revoke it at any time from Android Settings. Poof never accesses any of these without an explicit user action.</p>
   </div>
 
@@ -712,7 +712,20 @@
   </section>
 
   <section class="tool-section">
-    <h3>26. Everything else</h3>
+    <h3>26. Recipes</h3>
+    <dl class="label-grid">
+      <dt>Tool</dt><dd>Recipes: your own cookbook, written by hand or pulled in from a recipe page you link to.</dd>
+      <dt>Accessed</dt><dd>The recipes you type or import: titles, ingredients, steps, notes, tags, times, servings, and any photo you attach. Photos come from Android&#39;s Photo Picker, which hands over the single picture you chose and nothing else, so the tool never asks for access to your gallery.</dd>
+      <dt>Used for</dt><dd>Keeping your cookbook in <code>recipes.db</code> on this device, along with a local search index over your titles, ingredients and notes so that searching an ingredient finds every recipe that uses it. Photos are copied into the app&#39;s private storage. How many times you have cooked something, and when you last did, are counted locally so the library can sort by it.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere, except the one case below. There is no sync, no account, and no cookbook service. Your recipes, your notes and what you cook are not sent anywhere and are not seen by us.</dd>
+      <dt>Importing from a link</dt><dd>When you paste a recipe link, or share one to Poof from your browser, the tool fetches <em>that page</em> from <em>that site</em> and reads the structured recipe data published in it. This is the only network request Recipes ever makes. It is described in full under &quot;What leaves your device&quot; below. If the page has a photo and you leave the photo switch on, the image is downloaded once from the same site and stored on your device.</dd>
+      <dt>What you send yourself</dt><dd>Sharing a recipe produces a plain text or Markdown message, and a recipe can be exported as a PDF. Both leave the device only when you choose to send them, through Android&#39;s share sheet or file picker, to an app you pick. A logo you add for PDF branding is stored on this device and only ever appears in PDFs you export yourself.</dd>
+      <dt>Deleting</dt><dd>Deleting a recipe deletes its ingredients, steps, tag links, search index entry and its photo file. Uninstalling Poof deletes the database and every stored photo.</dd>
+    </dl>
+  </section>
+
+  <section class="tool-section">
+    <h3>27. Everything else</h3>
     <dl class="label-grid">
       <dt>Tools</dt><dd>Every other tool in Poof: the converters, calculators, text and PDF utilities, image and video tools, timers, and the rest.</dd>
       <dt>Accessed</dt><dd>Only what you hand them: the numbers you type, the text you paste, or the file you pick. Tools that need a file use Android&#39;s system picker, so they see the one file you chose and nothing else on your storage.</dd>
@@ -723,7 +736,7 @@
 
   <h2>What leaves your device</h2>
 
-  <p>Five tools, and only when you use them.</p>
+  <p>Six tools, and only when you use them.</p>
 
   <section class="tool-section">
     <h3>Speed Test → Cloudflare</h3>
@@ -749,6 +762,13 @@
       <li>https://dns.google/resolve (Google Public DNS)</li>
     </ul>
     <p>In Compare mode the same request is sent in parallel to both so you can see how their answers differ. In Single mode only the resolver you chose is contacted. The tool can also resolve via the device's system DNS for A and AAAA records (your phone's normal resolver path, controlled by Android Settings or Private DNS), in which case the request goes wherever Android sends it. Each resolver's privacy policy applies to its side: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a>, <a href="https://developers.google.com/speed/public-dns/privacy" target="_blank" rel="noopener">Google Public DNS</a>.</p>
+  </section>
+
+  <section class="tool-section">
+    <h3>Recipes &rarr; whichever recipe page you link to</h3>
+    <p>When you paste a recipe link into Recipes, or share one to Poof from your browser, the tool fetches that page and looks for the structured recipe data (schema.org Recipe, published as JSON-LD) that most recipe sites already include for search engines. Like the URL Unshortener, and unlike the other tools here, it does not contact a fixed service: it contacts <em>the address you gave it</em>, and nothing else. There is no intermediary, no proxy, and no server of ours involved at any point.</p>
+    <p>The request is a plain GET from your device&#39;s normal IP, with a generic Poof user-agent string and no cookies, no identifiers, and nothing about you or your cookbook attached. The site can see your IP making the request, in the same way it would if you opened the page in a browser. The response is read up to a two megabyte limit and then discarded; only the recipe fields you approve on the review screen are kept, and only once you press Save.</p>
+    <p>If the page carries a photo and you leave the photo switch on, one further request is made to that same site for that image, which is then downscaled and stored on your device. Turning the switch off means no image request is made at all. No other address is ever contacted, no matter what the page contains.</p>
   </section>
 
   <section class="tool-section">
