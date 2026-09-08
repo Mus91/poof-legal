@@ -432,10 +432,10 @@
   <section class="tool-section">
     <h3>2. Camera</h3>
     <dl class="label-grid">
-      <dt>Tools</dt><dd>QR Generator/Scanner, Document Scanner, Magnifier, Camera Inspector, Image OCR, Live Color Picker, Authenticator (scanning a two-factor setup QR code), Loyalty Cards (scanning the barcode on a physical card).</dd>
+      <dt>Tools</dt><dd>QR Generator/Scanner, Document Scanner, Magnifier, Camera Inspector, Image OCR, Live Color Picker, Authenticator (scanning a two-factor setup QR code), Loyalty Cards (scanning the barcode on a physical card), Parking Spot Saver (a photo of where you parked), Vehicle Log (photos of receipts or the odometer).</dd>
       <dt>Accessed</dt><dd>Camera frames in real time.</dd>
       <dt>Used for</dt><dd>On-device processing using Google's ML Kit (the on-device variant: no Firebase ML, no Google Cloud Vision). Frames are analyzed in memory for barcodes, text, document edges, or color.</dd>
-      <dt>Goes to</dt><dd class="nowhere">Nowhere. No frames are saved. No frames are uploaded.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere off your phone. Live frames are analyzed in memory and never uploaded. The two tools that let you take a photo on purpose, Parking Spot Saver and Vehicle Log, keep that photo in Poof&#39;s app-private storage on your device only; deleting the entry deletes the photo.</dd>
     </dl>
   </section>
 
@@ -730,7 +730,7 @@
       <dt>Tools</dt><dd>Every other tool in Poof: the converters, calculators, text and PDF utilities, image and video tools, timers, and the rest.</dd>
       <dt>Accessed</dt><dd>Only what you hand them: the numbers you type, the text you paste, or the file you pick. Tools that need a file use Android&#39;s system picker, so they see the one file you chose and nothing else on your storage.</dd>
       <dt>Used for</dt><dd>Doing the job on the device. Some remember your last settings (units, quality, presets) in app-private storage so you do not reconfigure them every time. Where a tool keeps a list you build up, it does so in its own local database.</dd>
-      <dt>Goes to</dt><dd class="nowhere">Nowhere, unless the tool is one of the five named under &quot;What leaves your device&quot;. Results you save or share go where you send them, through Android&#39;s own picker or share sheet.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere, unless the tool is one of the six named under &quot;What leaves your device&quot;. Results you save or share go where you send them, through Android&#39;s own picker or share sheet.</dd>
     </dl>
   </section>
 
