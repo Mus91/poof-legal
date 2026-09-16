@@ -397,7 +397,7 @@
       <span>Poof</span>
     </div>
     <h1>Privacy Policy</h1>
-    <p class="effective-date">Effective August 31, 2026</p>
+    <p class="effective-date">Effective September 16, 2026</p>
   </header>
 
   <p>This document explains exactly what data Poof accesses on your device, what it does with that data, and what (if anything) leaves your device. Poof is built on three commitments:</p>
@@ -629,7 +629,7 @@
       <dt>Tool</dt><dd>Medication Tracker: the medicines you take, when to take them, and what you have taken.</dd>
       <dt>Accessed</dt><dd>Only what you enter: medicine names, doses, forms, the times of day you want reminders, start and end dates, and the taken or skipped marks you tap against each scheduled dose.</dd>
       <dt>Used for</dt><dd>Storing your medicines and their schedules in <code>medication-tracker.db</code> on this device, drawing the day-grouped dose timeline, and scheduling the reminder notifications you configure. Reminders fire through Android&#39;s AlarmManager and re-schedule themselves after a reboot.</dd>
-      <dt>Goes to</dt><dd class="nowhere">Nowhere. This is health information and it is treated as such: it stays on this device, is never transmitted, and there is no cloud copy. Deleting a medicine deletes its schedule and its history. Uninstalling Poof deletes the database.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere. This is health information and it is treated as such: it stays on this device and is never transmitted by Poof. There is no cloud copy unless you turn on Google backup in Poof's settings, in which case it travels only inside your own end-to-end encrypted device backup, which neither we nor Google can read. Deleting a medicine deletes its schedule and its history. Uninstalling Poof deletes the database.</dd>
       <dt>Notifications</dt><dd>A reminder notification names the medicine, because a reminder that does not is useless. If you would rather it did not appear on a lock screen, Android&#39;s per-app notification settings control that.</dd>
     </dl>
   </section>
@@ -640,7 +640,7 @@
       <dt>Tool</dt><dd>Qada Tracker: a record of missed prayers and fasts, and of making them up.</dd>
       <dt>Accessed</dt><dd>What you enter: a date range, which of the five prayers to count, how many days a month you do not pray, how many fasts you owe, and each entry you log as prayed, fasted, or settled by fidya. One preference records whether you count Witr as obligatory, so the tracker matches your own school rather than asserting a ruling you do not hold.</dd>
       <dt>Used for</dt><dd>Keeping an append-only ledger in <code>qada-tracker.db</code>, from which the balance, your pace, and the projected finish are calculated. Your settings live in app-private storage under <code>qada_tracker</code>. An optional daily reminder is scheduled locally and never states the total.</dd>
-      <dt>Goes to</dt><dd class="nowhere">Nowhere. None of it is transmitted and there is no cloud copy. Two parts of it are worth naming plainly, because they are sensitive: the Witr preference is effectively a note about your religious practice, and the &quot;days a month I do not pray&quot; figure is menstrual-cycle information. Both stay on this device, are used only to work out the numbers in this tool, and are deleted with the tool&#39;s data.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere. None of it is transmitted by Poof, and there is no cloud copy unless you turn on Google backup in Poof's settings, in which case it travels only inside your own end-to-end encrypted device backup, which neither we nor Google can read. Two parts of it are worth naming plainly, because they are sensitive: the Witr preference is effectively a note about your religious practice, and the &quot;days a month I do not pray&quot; figure is menstrual-cycle information. Both stay on this device, are used only to work out the numbers in this tool, and are deleted with the tool&#39;s data.</dd>
     </dl>
   </section>
 
@@ -798,10 +798,24 @@
       <li><strong>No advertising.</strong> No AdMob, Unity Ads, AppLovin, IronSource, etc.</li>
       <li><strong>No accounts.</strong> No sign-in, no email collection, no profile.</li>
       <li><strong>No device identifiers.</strong> No GAID, ANDROID_ID, IMEI, MAC address.</li>
-      <li><strong>No cloud backup.</strong> Auto-backup and device-transfer rules are disabled, so your Poof data does not go to Google Drive even if the rest of your phone does. The Authenticator and Loyalty Cards tools' optional backups are different: they are exports <em>you</em> trigger yourself, encrypted with <em>your</em> password, saved wherever you choose.</li>
+      <li><strong>No cloud backup unless you ask for it.</strong> Android's automatic backup is off for Poof by default. If you turn on "Back up to your Google account" in Poof's settings, Android includes your lists, trackers and settings in the device backup it keeps in your own Google account, encrypted with your screen lock so that neither we nor Google can read it; see <a href="#backup">Google backup</a>. Poof itself never uploads anything. The Authenticator and Loyalty Cards tools' optional backups are different again: they are exports <em>you</em> trigger yourself, encrypted with <em>your</em> password, saved wherever you choose.</li>
       <li><strong>No data selling.</strong> There is no data to sell. There is no buyer.</li>
     </ul>
   </div>
+
+  <h2 id="backup">Google backup</h2>
+
+  <p>Poof can take part in Android's own device backup, but only if you turn it on: Settings, then "Back up to your Google account". It is off until you do. Poof itself never uploads anything; Android does, as part of the device backup it already keeps for your other apps, in your own Google account, in space that does not count against your Drive storage.</p>
+
+  <p>That backup is end-to-end encrypted with your screen lock, so neither we nor Google can read it. On Android 12 and later, Poof's part of the backup does not run at all on a phone that cannot encrypt it that way. On Android 9 to 11 it runs only when you have a screen lock set. On older versions Poof does not take part.</p>
+
+  <p><strong>What is included:</strong> your lists, trackers, records and settings. Shopping Run, the text of your Recipes, Habits, Subscriptions, Vehicle Log, Medication Tracker, Qada Tracker, Zakat and Gold records, Settle Up, Birthdays, Loyalty Cards, Countdowns, Notification History, and your Prayer Times settings.</p>
+
+  <p><strong>What is never included, whatever the toggle says:</strong> Secure Vault, Encrypted Notes, Diary and the Authenticator, because their keys live in this phone's hardware and a copy anywhere else would be unreadable; photos attached to recipes, vehicles and parking spots; GPS Logger tracks; and your Pro entitlement, which Google Play restores on its own. The four encrypted tools keep their own password-protected exports for moving between phones.</p>
+
+  <p>The same toggle controls Android's device-to-device transfer, the step that copies your apps when you set up a new phone from this one by cable or Wi-Fi. That copy goes straight from one phone to the other and, having no size limit, additionally carries the photos and GPS tracks.</p>
+
+  <p>Turning the toggle off stops the backups, and on the next backup pass replaces Poof's part of the device backup with an empty placeholder, so nothing of yours remains there. You can also delete stored device backups at any time from your Google account settings. We never see or receive your backups.</p>
 
   <h2>Pro purchases</h2>
 
@@ -817,7 +831,7 @@
     <li><strong>Revoke any permission</strong> from Android Settings → Apps → Poof → Permissions.</li>
     <li><strong>Delete any captured data</strong> from inside the relevant tool (notification history, QR history, speed-test history, etc.).</li>
     <li><strong>Clear all app data</strong> from Android Settings → Apps → Poof → Storage → Clear data. This wipes every preference, history entry, and cached file. Poof will be in its first-launch state.</li>
-    <li><strong>Uninstall.</strong> Removing the app removes all of its data (Auto-Backup is disabled, so nothing is restored elsewhere).</li>
+    <li><strong>Uninstall.</strong> Removing the app removes all of its data from the phone. If you had turned on Google backup, the device backup already in your Google account stays there until it expires or you delete it from your Google account settings; Poof cannot reach it.</li>
   </ul>
 
   <h2>Feedback</h2>
