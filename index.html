@@ -432,10 +432,10 @@
   <section class="tool-section">
     <h3>2. Camera</h3>
     <dl class="label-grid">
-      <dt>Tools</dt><dd>QR Generator/Scanner, Document Scanner, Magnifier, Camera Inspector, Image OCR, Live Color Picker, Authenticator (scanning a two-factor setup QR code), Loyalty Cards (scanning the barcode on a physical card), Parking Spot Saver (a photo of where you parked), Vehicle Log (photos of receipts or the odometer).</dd>
+      <dt>Tools</dt><dd>QR Generator/Scanner, Document Scanner, Magnifier, Camera Inspector, Image OCR, Live Color Picker, Authenticator (scanning a two-factor setup QR code), Loyalty Cards (scanning the barcode on a physical card), Parking Spot Saver (a photo of where you parked), Vehicle Log (photos of receipts or the odometer), ID Photo (a passport, visa or ID card photo of you or a family member).</dd>
       <dt>Accessed</dt><dd>Camera frames in real time.</dd>
       <dt>Used for</dt><dd>On-device processing using Google's ML Kit (the on-device variant: no Firebase ML, no Google Cloud Vision). Frames are analyzed in memory for barcodes, text, document edges, or color.</dd>
-      <dt>Goes to</dt><dd class="nowhere">Nowhere we control. Live frames are analyzed in memory and never uploaded. The two tools that let you take a photo on purpose, Parking Spot Saver and Vehicle Log, keep that photo in Poof&#39;s app-private storage on your device; deleting the entry deletes the photo. Those photos are never part of the copy in your Google account; if you turn on Google backup, a direct phone-to-phone transfer on Android 12 and later carries them.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere we control. Live frames are analyzed in memory and never uploaded. The three tools that let you take a photo on purpose, Parking Spot Saver, Vehicle Log and ID Photo, keep that photo in Poof&#39;s app-private storage on your device; deleting the entry deletes the photo. Those photos are never part of the copy in your Google account; if you turn on Google backup, a direct phone-to-phone transfer on Android 12 and later carries them.</dd>
     </dl>
   </section>
 
@@ -725,7 +725,17 @@
   </section>
 
   <section class="tool-section">
-    <h3>27. Everything else</h3>
+    <h3>27. ID Photo</h3>
+    <dl class="label-grid">
+      <dt>Tool</dt><dd>ID Photo: makes a passport, visa or ID card photo to a country&#39;s published rule, as an upload file or a print sheet at true size.</dd>
+      <dt>Accessed</dt><dd>The photo you take with the camera or pick with Android&#39;s Photo Picker, which hands over the single picture you chose and nothing else. If you use family profiles, the name you give each person and the document you chose for them.</dd>
+      <dt>Used for</dt><dd>Finding the face, measuring it and cropping it to the document&#39;s rule, all on the device. Faces are found by Google&#39;s on-device ML Kit; no face data is kept, only the photo. Where a document&#39;s rule allows it and you turn it on, the background is replaced on the device too. The photo you are working on is copied into <code>idphoto</code> inside the app&#39;s own private storage so your crop survives a restart, and unused copies are deleted the next time you open the tool. Family profiles keep one photo per person in the same folder and the name and document in <code>idphoto.db</code>; deleting a profile deletes its photo unless another profile uses it.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere. Poof never uploads your photo or anything measured from it, and the tool makes no network request. Upload files and print sheets go only where you save or share them, through Android&#39;s own picker, share sheet or print dialog. If you turn on Google backup in Poof&#39;s settings, your profile names and document choices are included in your own end-to-end encrypted device backup; the photos are never part of the copy in your Google account, although a direct phone-to-phone transfer on Android 12 and later carries them. See <a href="#backup">Google backup</a>.</dd>
+    </dl>
+  </section>
+
+  <section class="tool-section">
+    <h3>28. Everything else</h3>
     <dl class="label-grid">
       <dt>Tools</dt><dd>Every other tool in Poof: the converters, calculators, text and PDF utilities, image and video tools, timers, and the rest.</dd>
       <dt>Accessed</dt><dd>Only what you hand them: the numbers you type, the text you paste, or the file you pick. Tools that need a file use Android&#39;s system picker, so they see the one file you chose and nothing else on your storage.</dd>
@@ -811,7 +821,7 @@
 
   <p><strong>What is included:</strong> your lists, trackers, records and settings. Shopping Run, the text of your Recipes, Habits, Subscriptions, Vehicle Log, Medication Tracker, Qada Tracker, Zakat and Gold records, Settle Up, Birthdays, Loyalty Cards, Countdowns, Notification History, your Prayer Times settings, and the saved data of every other tool not named in the next paragraph, including the details you save in PDF Fill. Captured notifications carry what other people send you, and sometimes one-time codes, so the backup does too.</p>
 
-  <p><strong>What is never included in the copy in your Google account, whatever the toggle says:</strong> Secure Vault, Encrypted Notes, Diary and the Authenticator, because their keys live in this phone's hardware and a copy anywhere else would be unreadable; photos attached to recipes, vehicles, parking spots and birthdays; logo images you picked for QR codes; GPS Logger tracks; remembered NFC tag passwords; the App Inspector's list of your installed apps; and your Pro entitlement, which Google Play restores on its own. The four encrypted tools keep their own password-protected exports for moving between phones.</p>
+  <p><strong>What is never included in the copy in your Google account, whatever the toggle says:</strong> Secure Vault, Encrypted Notes, Diary and the Authenticator, because their keys live in this phone's hardware and a copy anywhere else would be unreadable; photos attached to recipes, vehicles, parking spots and birthdays, and the photos ID Photo keeps; logo images you picked for QR codes; GPS Logger tracks; remembered NFC tag passwords; the App Inspector's list of your installed apps; and your Pro entitlement, which Google Play restores on its own. The four encrypted tools keep their own password-protected exports for moving between phones.</p>
 
   <p>The same toggle controls Android's device-to-device transfer, the step that copies your apps when you set up a new phone from this one by cable or Wi-Fi. That copy goes straight from one phone to the other and does not depend on a screen lock. On Android 12 and later it has no size limit and additionally carries the photos, QR logos and GPS tracks; on Android 9 to 11 it carries the same set as the cloud backup. Secure Vault, Encrypted Notes, Diary, the Authenticator, remembered NFC tag passwords, the App Inspector&#39;s list and your Pro entitlement are never carried. With the toggle off, Poof&#39;s data is not carried there either.</p>
 
