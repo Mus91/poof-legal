@@ -397,7 +397,7 @@
       <span>Poof</span>
     </div>
     <h1>Privacy Policy</h1>
-    <p class="effective-date">Effective September 24, 2026</p>
+    <p class="effective-date">Effective September 25, 2026</p>
   </header>
 
   <p>This document explains exactly what data Poof accesses on your device, what it does with that data, and what (if anything) leaves your device. Poof is built on three commitments:</p>
@@ -658,7 +658,7 @@
     <h3>21. Settle Up (shared expenses)</h3>
     <dl class="label-grid">
       <dt>Tool</dt><dd>Settle Up: track what a group spent, split it, and work out who pays whom.</dd>
-      <dt>Accessed</dt><dd>The names you type for the people in the group, what each expense was for, its amount, who paid it, who it was split between, and any payments handed over. <strong>This is the one tool where what you enter is partly about other people, not only about you.</strong> They are names you type, not names read from your Contacts: Settle Up never touches your contact list.</dd>
+      <dt>Accessed</dt><dd>The names you type for the people in the group, what each expense was for, its amount, who paid it, who it was split between, and any payments handed over. <strong>Here, as in Gift Ledger, what you enter is partly about other people, not only about you.</strong> They are names you type, not names read from your Contacts: Settle Up never touches your contact list.</dd>
       <dt>Used for</dt><dd>Keeping the group&#39;s ledger in <code>settle-up.db</code> on this device, from which every balance and the settle-up list are calculated. Which group you had open and the currency you last used are kept in app-private storage under <code>settle_up</code>.</dd>
       <dt>Goes to</dt><dd class="nowhere">Nowhere on its own. Nothing syncs, there is no account, and the other people in the group are not contacted by Poof in any way. They do not need the app and are never sent anything by it. If you turn on Google backup in Poof's settings, this data is included in your own end-to-end encrypted device backup, which neither we nor Google can read; see <a href="#backup">Google backup</a>.</dd>
       <dt>What you send yourself</dt><dd>The tool produces a statement and a CSV listing the expenses, the shares and who pays whom, including the names you entered. These leave the device only when you choose to send them, through Android&#39;s share sheet, to an app you pick. That is the whole point of them: the rest of the group cannot see the ledger, so they get a message they can check. Once you send it, it is subject to whatever app you sent it with.</dd>
@@ -736,7 +736,19 @@
   </section>
 
   <section class="tool-section">
-    <h3>28. Everything else</h3>
+    <h3>28. Gift Ledger</h3>
+    <dl class="label-grid">
+      <dt>Tool</dt><dd>Gift Ledger: a notebook of the gifts given at your occasions (nuqoot) and of what you gave at other families&#39; occasions.</dd>
+      <dt>Accessed</dt><dd>The family names you type, the names written on envelopes, amounts, gold weights and karats, items, the occasions and their dates, and any notes you add. <strong>As in Settle Up, what you enter is partly about other people, not only about you.</strong> They are names you type, not names read from your Contacts: Gift Ledger never touches your contact list. If you share a line of text to Poof and choose Gift Ledger, it is used only to search the ledger and is not stored.</dd>
+      <dt>Used for</dt><dd>Keeping the ledger in <code>gift-ledger.db</code> on this device, from which the totals, the envelope list and each family&#39;s &quot;since their last gift&quot; card are worked out. If you count the cash from the gift box, the note counts are kept with that occasion.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Nowhere on its own. Nothing syncs, there is no account, and no family is contacted by Poof in any way. If you turn on Google backup in Poof&#39;s settings, this data is included in your own end-to-end encrypted device backup, which neither we nor Google can read; see <a href="#backup">Google backup</a>.</dd>
+      <dt>What you send yourself</dt><dd>For one of your own occasions, the tool can make a statement as text, an image or a PDF, listing each envelope and the totals. It never includes your notes, what you gave to others, or any other occasion. It leaves the device only when you choose to send it, through Android&#39;s share sheet, to an app you pick. The image and the PDF are written to the app&#39;s cache for that share and deleted the next time Poof starts.</dd>
+      <dt>Deleting</dt><dd>Deleting a gift, an occasion or a family deletes it from the database; the Undo shown straight after puts it back. Uninstalling Poof deletes the database.</dd>
+    </dl>
+  </section>
+
+  <section class="tool-section">
+    <h3>29. Everything else</h3>
     <dl class="label-grid">
       <dt>Tools</dt><dd>Every other tool in Poof: the converters, calculators, text and PDF utilities, image and video tools, timers, and the rest.</dd>
       <dt>Accessed</dt><dd>Only what you hand them: the numbers you type, the text you paste, or the file you pick. Tools that need a file use Android&#39;s system picker, so they see the one file you chose and nothing else on your storage.</dd>
@@ -820,7 +832,7 @@
 
   <p>Poof adds your data to that backup only when Android reports that it is encrypted end to end with your screen lock, so that neither we nor Google can read it. That needs a screen lock on every Android version: without one, Poof&#39;s part of the backup holds nothing but the empty placeholder described below, and a note under the toggle in Settings says so. On Android 8 the toggle is not offered, and Poof&#39;s part of the backup is only that placeholder.</p>
 
-  <p><strong>What is included:</strong> your lists, trackers, records and settings. Shopping Run, the text of your Recipes, Habits, Subscriptions, Vehicle Log, Medication Tracker, Qada Tracker, Zakat and Gold records, Settle Up, Birthdays, Loyalty Cards, Countdowns, Notification History, your Prayer Times settings, and the saved data of every other tool not named in the next paragraph, including the details you save in PDF Fill. Captured notifications carry what other people send you, and sometimes one-time codes, so the backup does too.</p>
+  <p><strong>What is included:</strong> your lists, trackers, records and settings. Shopping Run, the text of your Recipes, Habits, Subscriptions, Vehicle Log, Medication Tracker, Qada Tracker, Zakat and Gold records, Settle Up, Gift Ledger, Birthdays, Loyalty Cards, Countdowns, Notification History, your Prayer Times settings, and the saved data of every other tool not named in the next paragraph, including the details you save in PDF Fill. Captured notifications carry what other people send you, and sometimes one-time codes, so the backup does too.</p>
 
   <p><strong>What is never included in the copy in your Google account, whatever the toggle says:</strong> Secure Vault, Encrypted Notes, Diary and the Authenticator, because their keys live in this phone's hardware and a copy anywhere else would be unreadable; PDF Fill drafts; photos attached to recipes, vehicles, parking spots and birthdays, and the photos ID Photo keeps; logo images you picked for QR codes; GPS Logger tracks; remembered NFC tag passwords; the App Inspector's list of your installed apps; and your Pro entitlement, which Google Play restores on its own. The four encrypted tools keep their own password-protected exports for moving between phones.</p>
 
@@ -861,7 +873,7 @@
   </div>
 
   <footer>
-    Poof | Privacy Policy · Effective September 24, 2026
+    Poof | Privacy Policy · Effective September 25, 2026
   </footer>
 
 </main>
