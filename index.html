@@ -397,7 +397,7 @@
       <span>Poof</span>
     </div>
     <h1>Privacy Policy</h1>
-    <p class="effective-date">Effective September 30, 2026</p>
+    <p class="effective-date">Effective October 3, 2026</p>
   </header>
 
   <p>This document explains exactly what data Poof accesses on your device, what it does with that data, and what (if anything) leaves your device. Poof is built on three commitments:</p>
@@ -537,9 +537,9 @@
     <dl class="label-grid">
       <dt>Tools</dt><dd>Pomodoro Timer, Habit Tracker, Time Tracker, Speed Reader.</dd>
       <dt>Accessed</dt><dd>Whatever you type into each tool: project / habit / focus-session names and colours, the times you pick for reminders, the durations you configure for focus and break cycles, the hourly rate you optionally set on a Time Tracker project (Pro), and the text you paste or share into Speed Reader.</dd>
-      <dt>Used for</dt><dd>Pomodoro stores its session durations + today's focus-session count in app-private preferences. Habit Tracker stores each habit (name, colour, optional daily reminder time) and your completion check-marks in a local database. Time Tracker stores each project and every tracked entry (project, start time, end time) in a separate local database, plus drives a foreground-service notification while a timer is running so you can stop without opening the app. Speed Reader stores only its reader settings (words-per-minute, font size, focal-letter highlight, pause-at-punctuation); the text you paste or share is held in memory while you read it, never written to disk.</dd>
+      <dt>Used for</dt><dd>Pomodoro stores its session durations + today's focus-session count in app-private preferences. Habit Tracker stores each habit (name, colour, and any daily reminder times, up to 12 for one habit) and your completion check-marks in a local database. Time Tracker stores each project and every tracked entry (project, start time, end time) in a separate local database, plus drives a foreground-service notification while a timer is running so you can stop without opening the app. Speed Reader stores only its reader settings (words-per-minute, font size, focal-letter highlight, pause-at-punctuation); the text you paste or share is held in memory while you read it, never written to disk.</dd>
       <dt>Goes to</dt><dd class="nowhere">Nowhere. All four tools are entirely on-device. None of them make a network request. Time Tracker's optional CSV export goes through Android's system file picker to a destination <em>you</em> choose; Poof does not upload anything on its own. If you turn on Google backup in Poof's settings, their saved data is included in your own end-to-end encrypted device backup; see <a href="#backup">Google backup</a>.</dd>
-      <dt>Reminders</dt><dd>Habit Tracker reminders are scheduled via Android's AlarmManager and fire as a notification at the time you set. After a device reboot they re-schedule automatically. Stop a reminder from the habit's detail screen or by deleting the habit. The Pomodoro and Time Tracker live notifications are tied to the running timer. They disappear when you stop it.</dd>
+      <dt>Reminders</dt><dd>Habit Tracker reminders are booked with Android's AlarmManager, one for each time you set, and each fires as a notification at that time: on the minute when Poof may use exact alarms (Alarms &amp; reminders in Android's settings), otherwise when Android next allows, usually within the hour. A later reminder replaces an earlier one for the same habit that you have not dismissed. They are booked again after a restart, an app update, a clock or time zone change, or a restore. Stop a reminder by removing its time on the habit's detail screen, or by deleting the habit. The Pomodoro and Time Tracker live notifications are tied to the running timer. They disappear when you stop it.</dd>
     </dl>
   </section>
 
@@ -918,7 +918,7 @@
   </div>
 
   <footer>
-    Poof | Privacy Policy · Effective September 30, 2026
+    Poof | Privacy Policy · Effective October 3, 2026
   </footer>
 
 </main>
