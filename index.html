@@ -397,7 +397,7 @@
       <span>Poof</span>
     </div>
     <h1>Privacy Policy</h1>
-    <p class="effective-date">Effective October 4, 2026</p>
+    <p class="effective-date">Effective October 28, 2026</p>
   </header>
 
   <p>This document explains exactly what data Poof accesses on your device, what it does with that data, and what (if anything) leaves your device. Poof is built on three commitments:</p>
@@ -412,7 +412,7 @@
 
   <div class="callout">
     <h2>The short version</h2>
-    <p>Poof is a utility toolkit. Most tools work entirely on your device and make no network request of their own. Six tools do, and only when you actively use them: Speed Test, Currency Converter, DNS Lookup, URL Unshortener, What&#39;s My IP, and Recipes. Four of those contact a fixed service chosen by us. Two, URL Unshortener and Recipes, contact a web address <em>you</em> give them and nothing else. Each is described in full under &quot;What leaves your device&quot; below. No request these tools make to any third party contains your contacts, files, location, notifications, or any user-identifying information. Separately, the tools that read barcodes, text or faces use Google&#39;s ML Kit. It works on your phone and never sends your pictures or what it reads, but it does send Google usage metrics, such as your phone model, Poof&#39;s version, an identifier for this installation and how long a scan took, and Google Play&#39;s billing library sends Google its own diagnostic logs; see <a href="#google-libraries">Google ML Kit and Play Billing</a>. And if you turn on Google backup in Poof&#39;s settings, Android can include Poof&#39;s data, including your notification history, saved locations and birthday entries, in its own end-to-end encrypted device backup, and in a direct transfer when you set up a new phone from this one; see <a href="#backup">Google backup</a>.</p>
+    <p>Poof is a utility toolkit. Most tools work entirely on your device and make no network request of their own. Six tools do, and only when you actively use them: Speed Test, Currency Converter, DNS Lookup, URL Unshortener, What&#39;s My IP, and Recipes. Four of those contact a fixed service chosen by us. Two, URL Unshortener and Recipes, contact a web address <em>you</em> give them and nothing else. Each is described in full under &quot;What leaves your device&quot; below. No request these tools make to any third party contains your contacts, files, location, notifications, or any user-identifying information. Separately, the tools that read barcodes, text or faces use Google&#39;s ML Kit. It works on your phone and never sends your pictures or what it reads, but it does send Google usage metrics, such as your phone model, Poof&#39;s version, an identifier for this installation and how long a scan took, and Google Play&#39;s billing library sends Google its own diagnostic logs; see <a href="#google-libraries">Google ML Kit and Play Billing</a>. When Prayer Times uses your device&#39;s location, it asks Android for the name of the place, which on most phones sends your coordinates to Google; see <a href="#place-name">Prayer Times place name</a>. And if you turn on Google backup in Poof&#39;s settings, Android can include Poof&#39;s data, including your notification history, saved locations and birthday entries, in its own end-to-end encrypted device backup, and in a direct transfer when you set up a new phone from this one; see <a href="#backup">Google backup</a>.</p>
     <p>When a tool needs access to something on your device (your camera, microphone, location, contacts, notifications, or installed apps, and on Android 8 and 9 only, your shared Pictures and Downloads folders when you save a file there), Android prompts you to grant permission, and you can revoke it at any time from Android Settings. Poof never accesses any of these without an explicit user action.</p>
   </div>
 
@@ -424,7 +424,7 @@
       <dt>Tools</dt><dd>Prayer Times, Sun &amp; Moon (sunrise/sunset), Qibla, GPS Logger, Altimeter, Parking Spot Saver.</dd>
       <dt>Accessed</dt><dd>Your device's GPS coordinates (latitude/longitude) via Android's standard Location Manager. Both <em>Approximate</em> and <em>Precise</em> location may be requested; coarse coordinates are used as fallback. GPS Logger additionally records a stream of coordinates over time while you have a recording session active, and may use the <em>Background location</em> permission so the session can continue while the screen is off (you explicitly grant this via Android Settings; the recording works without it while the screen is on and the foreground notification is visible).</dd>
       <dt>Used for</dt><dd>Calculating prayer times, sunrise/sunset, and Qibla bearing locally on the device. Prayer Times stores your last-known coordinates in app-private storage so it can compute prayer times offline. If you pick a city by hand, it also keeps up to two of the cities you picked, so you can switch between them in one tap from its main screen; each is saved as the city&#39;s name, country and time zone with the centre coordinates from Poof&#39;s built-in city list, never your own position, alongside your other Prayer Times settings in app-private storage. GPS Logger stores the recorded track (a list of points with timestamps and optional altitude/accuracy/speed) in a local database on your device; you can rename, export, or delete tracks at any time. Parking Spot Saver stores the single spot you save, plus any note or photo you attach to it, in <code>parking-spots.db</code>, so it can point you back to the car later.</dd>
-      <dt>Goes to</dt><dd class="nowhere">Nowhere. Poof never transmits your coordinates. There is no Poof server. GPS tracks exported as GPX or KML are saved to a destination you pick via the system share sheet; nothing is uploaded by Poof. GPS tracks are never part of the cloud backup. On Android 12 and later they are carried only by a direct phone-to-phone transfer, and only if you turn on Google backup in Poof's settings. If you do turn it on, the last location Prayer Times and Sun &amp; Moon remember, the cities Prayer Times keeps for switching, and your saved parking spot are included in your own end-to-end encrypted device backup; see <a href="#backup">Google backup</a>.</dd>
+      <dt>Goes to</dt><dd class="nowhere">Not to us: there is no Poof server, and Poof itself makes no network request with your coordinates. One lookup does leave the phone: when Prayer Times uses your device&#39;s location, it asks Android for the name of the place to show on screen, and on most phones Android sends your coordinates to Google to look that name up; see <a href="#place-name">Prayer Times place name</a>. A city you pick by hand never needs it. When you tap Open in Maps or Share on a saved parking spot, Poof hands the spot&#39;s coordinates to the maps app or the app you pick. GPS tracks exported as GPX or KML are saved to a destination you pick via the system share sheet; nothing is uploaded by Poof. GPS tracks are never part of the cloud backup. On Android 12 and later they are carried only by a direct phone-to-phone transfer, and only if you turn on Google backup in Poof's settings. If you do turn it on, the last location Prayer Times and Sun &amp; Moon remember, the cities Prayer Times keeps for switching, and your saved parking spot are included in your own end-to-end encrypted device backup; see <a href="#backup">Google backup</a>.</dd>
     </dl>
     <p class="opt-out">Prayer Times, Sun &amp; Moon, and Qibla accept manual city entry instead of GPS. GPS Logger requires GPS to record. Location permission can be revoked any time from Android Settings.</p>
   </section>
@@ -789,7 +789,7 @@
 
   <h2>What leaves your device</h2>
 
-  <p>Six tools, and only when you use them. Separately, two Google libraries in Poof, ML Kit and Google Play&#39;s billing library, send Google their own diagnostic logs, described at the end of this section. And if you turn on Google backup in Poof&#39;s settings, Android carries Poof&#39;s data in its own encrypted device backup; see <a href="#backup">Google backup</a>.</p>
+  <p>Six tools, and only when you use them. Separately, Prayer Times asks Android for the name of the place it finds you in, which on most phones goes to Google, and two Google libraries in Poof, ML Kit and Google Play&#39;s billing library, send Google their own diagnostic logs; both are described at the end of this section. And if you turn on Google backup in Poof&#39;s settings, Android carries Poof&#39;s data in its own encrypted device backup; see <a href="#backup">Google backup</a>.</p>
 
   <section class="tool-section">
     <h3>Speed Test → Cloudflare</h3>
@@ -842,6 +842,12 @@
     <p>Each service identifies you by the source IP of the request itself, the same way any website sees your IP. No request body, no API key, no account, no device identifier. The tool does not store the result; closing the screen discards it. icanhazip.com is operated by Cloudflare. The relevant privacy policies are: <a href="https://ipwho.is/" target="_blank" rel="noopener">ipwho.is</a>, <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a>.</p>
   </section>
 
+  <section class="tool-section" id="place-name">
+    <h3>Prayer Times place name &rarr; Google, through Android</h3>
+    <p>When Prayer Times uses your device&#39;s location, it shows the name of the place, such as &quot;Cairo, Egypt&quot;, rather than a pair of numbers. To get that name it asks Android&#39;s built-in place-name service, the Geocoder, passing it the coordinates it has just found. Poof makes no network request of its own for this. On most phones Android hands the request to Google Play services, which sends the coordinates to Google and returns the name. Poof shows the name and does not save it, and your prayer times are worked out on the phone either way.</p>
+    <p>No other tool asks for a place name. If you would rather Prayer Times never does, pick your city by hand: Poof then uses that city&#39;s centre from its built-in list and asks Android nothing. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&#39;s privacy policy</a> applies to Google&#39;s side.</p>
+  </section>
+
   <section class="tool-section" id="google-libraries">
     <h3>Google ML Kit and Play Billing → Google</h3>
     <p>Poof uses Google&#39;s ML Kit to read QR codes, barcodes and text, to find a document&#39;s edges, to find faces and to separate a person from the background. The work happens on your phone. In Google&#39;s words, &quot;processing of the input data (e.g. images, video, text) fully happens on-device, and ML Kit does not send that data and the resultant outputs to Google servers.&quot; Poof does not send them either.</p>
@@ -854,7 +860,7 @@
     <p>Google Play&#39;s billing library, which Poof uses each time it starts to check whether you have Pro, has its own logger that sends Google diagnostic events the same way, to the same address, with the same phone details. Google says only that this logging gives it insight into how the library&#39;s requests go, such as success and failure, and into connection problems, and that it uses this to improve the library and support errors; it does not publish the events&#39; full contents. Poof gives the library nothing but the Pro product it asks about and your purchase.</p>
   </section>
 
-  <p>The six tools above send no personally identifying information. Their requests are made from your device&#39;s IP (same as any web browser) and carry no user ID or device identifier, because Poof has none. Google&#39;s libraries are the exception: ML Kit&#39;s metrics carry the identifiers Google describes above, and they and the billing library&#39;s logs go to Google, not to us.</p>
+  <p>The six tools above send no personally identifying information. Their requests are made from your device&#39;s IP (same as any web browser) and carry no user ID or device identifier, because Poof has none. Google&#39;s libraries are the exception: ML Kit&#39;s metrics carry the identifiers Google describes above, and they and the billing library&#39;s logs go to Google, not to us. So is the Prayer Times place-name lookup, which carries your coordinates to Google through Android.</p>
 
   <h2>What we do <em>not</em> do</h2>
 
@@ -918,7 +924,7 @@
   </div>
 
   <footer>
-    Poof | Privacy Policy · Effective October 4, 2026
+    Poof | Privacy Policy · Effective October 28, 2026
   </footer>
 
 </main>
